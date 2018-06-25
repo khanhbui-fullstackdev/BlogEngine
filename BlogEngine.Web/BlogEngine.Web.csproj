@@ -44,6 +44,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -112,7 +118,25 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BlogEngine.Common\BlogEngine.Common.csproj">
+      <Project>{d7c1d2c9-66b4-418a-a1ca-8356eb43f28b}</Project>
+      <Name>BlogEngine.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlogEngine.Data\BlogEngine.Data.csproj">
+      <Project>{6fa99982-e373-46a3-85c1-cb7c004eaed8}</Project>
+      <Name>BlogEngine.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlogEngine.Model\BlogEngine.Model.csproj">
+      <Project>{4f6746ae-2335-48a4-affb-228e572f2de5}</Project>
+      <Name>BlogEngine.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlogEngine.Service\BlogEngine.Service.csproj">
+      <Project>{d4fa7c5d-ae1e-4298-bd44-77111052211f}</Project>
+      <Name>BlogEngine.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
