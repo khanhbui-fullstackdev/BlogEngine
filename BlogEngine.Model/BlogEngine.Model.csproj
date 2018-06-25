@@ -47,6 +47,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstracts\Audit.cs" />
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\PostTag.cs" />
+    <Compile Include="Models\SubCategory.cs" />
+    <Compile Include="Models\Tag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -59,8 +67,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -47,6 +47,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BlogEngineDbContext.cs" />
+    <Compile Include="Migrations\201806251001421_Initial_BlogEngine_Database.cs" />
+    <Compile Include="Migrations\201806251001421_Initial_BlogEngine_Database.Designer.cs">
+      <DependentUpon>201806251001421_Initial_BlogEngine_Database.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806251126465_Update_AbstractClass_Audit.cs" />
+    <Compile Include="Migrations\201806251126465_Update_AbstractClass_Audit.Designer.cs">
+      <DependentUpon>201806251126465_Update_AbstractClass_Audit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -66,6 +76,14 @@
   <ItemGroup>
     <Folder Include="Infrastrutures\" />
     <Folder Include="Repositories\IRepositories\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201806251001421_Initial_BlogEngine_Database.resx">
+      <DependentUpon>201806251001421_Initial_BlogEngine_Database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806251126465_Update_AbstractClass_Audit.resx">
+      <DependentUpon>201806251126465_Update_AbstractClass_Audit.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
