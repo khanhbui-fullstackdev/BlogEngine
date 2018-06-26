@@ -1,8 +1,16 @@
-﻿
+﻿@model IEnumerable<BlogEngine.Model.Models.Post>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var posts = Model;
 }
 
 <h2>Index</h2>
+<ul>
+    @foreach (var post in posts)
+    {
+        <li>@post.Name</li>
+    }
+</ul>
 

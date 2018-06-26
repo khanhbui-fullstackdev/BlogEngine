@@ -48,6 +48,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BlogEngineDbContext.cs" />
+    <Compile Include="Infrastrutures\DbFactory.cs" />
+    <Compile Include="Infrastrutures\Disposable.cs" />
+    <Compile Include="Infrastrutures\IDbFactory.cs" />
+    <Compile Include="Infrastrutures\IRepositoryBase.cs" />
+    <Compile Include="Infrastrutures\IUnitOfWork.cs" />
+    <Compile Include="Infrastrutures\RepositoryBase.cs" />
+    <Compile Include="Infrastrutures\UnitOfWork.cs" />
     <Compile Include="Migrations\201806251001421_Initial_BlogEngine_Database.cs" />
     <Compile Include="Migrations\201806251001421_Initial_BlogEngine_Database.Designer.cs">
       <DependentUpon>201806251001421_Initial_BlogEngine_Database.cs</DependentUpon>
@@ -56,8 +63,14 @@
     <Compile Include="Migrations\201806251126465_Update_AbstractClass_Audit.Designer.cs">
       <DependentUpon>201806251126465_Update_AbstractClass_Audit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806260715490_Update_Post_WithNewColumn_SubCategory.cs" />
+    <Compile Include="Migrations\201806260715490_Update_Post_WithNewColumn_SubCategory.Designer.cs">
+      <DependentUpon>201806260715490_Update_Post_WithNewColumn_SubCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IRepositories\IPostRepository.cs" />
+    <Compile Include="Repositories\PostRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BlogEngine.Common\BlogEngine.Common.csproj">
@@ -73,16 +86,16 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Infrastrutures\" />
-    <Folder Include="Repositories\IRepositories\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201806251001421_Initial_BlogEngine_Database.resx">
       <DependentUpon>201806251001421_Initial_BlogEngine_Database.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806251126465_Update_AbstractClass_Audit.resx">
       <DependentUpon>201806251126465_Update_AbstractClass_Audit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806260715490_Update_Post_WithNewColumn_SubCategory.resx">
+      <DependentUpon>201806260715490_Update_Post_WithNewColumn_SubCategory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

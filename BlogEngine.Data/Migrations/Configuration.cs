@@ -269,7 +269,8 @@ namespace BlogEngine.Data.Migrations
                     CategoryID = 1,
                     Summary = "Today we released a prototype of a C# feature called “nullable reference types“, which is intended to help you find and fix most of your null-related bugs before they blow up at runtime. We would love for you to install the prototype and try it out on your code! (Or maybe a copy of it!",
                     CreatedDate = DateTime.Now,
-                    CreatedBy = "khanh.buivuong@nashtechglobal.com"
+                    CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                    SubCategoryID = 15
                 },
                 new Post()
                 {
@@ -278,7 +279,8 @@ namespace BlogEngine.Data.Migrations
                     CategoryID = 2,
                     Summary=@"We released .NET Core 2.1.1. This update includes .NET Core SDK 2.1.301, ASP.NET Core 2.1.1 and .NET Core 2.1.1. See .NET Core 2.1.1 release notes for complete details on the release. Quality Updates CLI [4050c6374] The “pack” command under ‘buildCrossTargeting’ for ‘Microsoft.DotNet.MSBuildSdkResolver’ now throws a “NU5104” warning/error because the SDK stage0 was changed to “2.1.300” [change was",
                     CreatedDate = DateTime.Now,
-                    CreatedBy = "khanh.buivuong@nashtechglobal.com"
+                    CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                    SubCategoryID = 2
                 }
             };
             context.Posts.AddRange(posts);
