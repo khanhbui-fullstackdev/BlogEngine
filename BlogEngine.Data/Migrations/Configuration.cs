@@ -159,7 +159,7 @@ namespace BlogEngine.Data.Migrations
                 {
                     Name = "NET Windows Form",
                     Slug = "winform",
-                    CategoryID = 2,
+                    CategoryID = 4,
                     CreatedDate = DateTime.Now,
                     CreatedBy = "khanh.buivuong@nashtechglobal.com"
                 },
@@ -167,7 +167,7 @@ namespace BlogEngine.Data.Migrations
                 {
                     Name = "Windows Presentation Foundation",
                     Slug = "winform-presentation-foundataion",
-                    CategoryID = 2,
+                    CategoryID = 4,
                     CreatedDate = DateTime.Now,
                     CreatedBy = "khanh.buivuong@nashtechglobal.com"
                 },
@@ -175,7 +175,7 @@ namespace BlogEngine.Data.Migrations
                 {
                     Name = "JQuery",
                     Slug = "jquery",
-                    CategoryID = 4,
+                    CategoryID = 6,
                     CreatedDate = DateTime.Now,
                     CreatedBy = "khanh.buivuong@nashtechglobal.com"
                 },
@@ -183,7 +183,7 @@ namespace BlogEngine.Data.Migrations
                 {
                     Name = "KnockoutJS",
                     Slug = "knockoutjs",
-                    CategoryID = 4,
+                    CategoryID = 6,
                     CreatedDate = DateTime.Now,
                     CreatedBy = "khanh.buivuong@nashtechglobal.com"
                 },
@@ -191,7 +191,7 @@ namespace BlogEngine.Data.Migrations
                 {
                     Name = "Angularjs",
                     Slug = "angularjs",
-                    CategoryID = 4,
+                    CategoryID = 6,
                     CreatedDate = DateTime.Now,
                     CreatedBy = "khanh.buivuong@nashtechglobal.com"
                 },
@@ -199,7 +199,7 @@ namespace BlogEngine.Data.Migrations
                 {
                     Name = "Angular 5",
                     Slug = "angular5",
-                    CategoryID = 4,
+                    CategoryID = 6,
                     CreatedDate = DateTime.Now,
                     CreatedBy = "khanh.buivuong@nashtechglobal.com"
                 },
@@ -207,7 +207,7 @@ namespace BlogEngine.Data.Migrations
                 {
                     Name = "Reactjs",
                     Slug = "Reactjs",
-                    CategoryID = 4,
+                    CategoryID = 6,
                     CreatedDate = DateTime.Now,
                     CreatedBy = "khanh.buivuong@nashtechglobal.com"
                 },
@@ -215,7 +215,7 @@ namespace BlogEngine.Data.Migrations
                 {
                     Name = "Vuejs",
                     Slug = "vuejs",
-                    CategoryID = 4,
+                    CategoryID = 6,
                     CreatedDate = DateTime.Now,
                     CreatedBy = "khanh.buivuong@nashtechglobal.com"
                 },
@@ -223,7 +223,7 @@ namespace BlogEngine.Data.Migrations
                 {
                     Name = "My SQL",
                     Slug = "mysql",
-                    CategoryID = 6,
+                    CategoryID = 8,
                     CreatedDate = DateTime.Now,
                     CreatedBy = "khanh.buivuong@nashtechglobal.com"
                 },
@@ -231,7 +231,7 @@ namespace BlogEngine.Data.Migrations
                 {
                     Name = "Microsoft SQL Server",
                     Slug = "microsoft-sql-server",
-                    CategoryID = 6,
+                    CategoryID = 8,
                     CreatedDate = DateTime.Now,
                     CreatedBy = "khanh.buivuong@nashtechglobal.com"
                 },
@@ -239,7 +239,7 @@ namespace BlogEngine.Data.Migrations
                 {
                     Name = "Oracle",
                     Slug = "oracle",
-                    CategoryID = 6,
+                    CategoryID = 8,
                     CreatedDate = DateTime.Now,
                     CreatedBy = "khanh.buivuong@nashtechglobal.com"
                 },
@@ -247,7 +247,7 @@ namespace BlogEngine.Data.Migrations
                 {
                     Name = "Object Oriented Programming",
                     Slug = "oop",
-                    CategoryID = 8,
+                    CategoryID = 1,
                     CreatedDate = DateTime.Now,
                     CreatedBy = "khanh.buivuong@nashtechglobal.com"
                 },
