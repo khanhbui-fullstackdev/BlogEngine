@@ -9,6 +9,9 @@ using BlogEngine.Service;
 using Microsoft.Owin;
 using Owin;
 using System.Reflection;
+using System.Web;
+using System.Web.Http;
+using System.Web.Mvc;
 
 [assembly: OwinStartup(typeof(BlogEngine.Web.App_Start.Startup))]
 
@@ -28,13 +31,20 @@ namespace BlogEngine.Web.App_Start
             // Register your Web MVC constructor controllers.
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
             // Register your Web API constructor controllers.
-            builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
+            builder.RegisterApiControllers(Assembly.GetExecutingAssembly()); //Register WebApi Controllers
 
-            // Register UnitOfWork and DbFactory
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerRequest();
             builder.RegisterType<DbFactory>().As<IDbFactory>().InstancePerRequest();
 
             builder.RegisterType<BlogEngineDbContext>().AsSelf().InstancePerRequest();
+
+            //Asp.net Identity
+            //builder.RegisterType<ApplicationUserStore>().As<IUserStore<ApplicationUser>>().InstancePerRequest();
+            //builder.RegisterType<ApplicationUserManager>().AsSelf().InstancePerRequest();
+            //builder.RegisterType<ApplicationSignInManager>().AsSelf().InstancePerRequest();
+            //builder.Register(c => HttpContext.Current.GetOwinContext().Authentication).InstancePerRequest();
+            //builder.Register(c => app.GetDataProtectionProvider()).InstancePerRequest();
+
 
             // Repositories
             builder.RegisterAssemblyTypes(typeof(PostRepository).Assembly)
@@ -45,6 +55,13 @@ namespace BlogEngine.Web.App_Start
             builder.RegisterAssemblyTypes(typeof(PostService).Assembly)
                .Where(t => t.Name.EndsWith("Service"))
                .AsImplementedInterfaces().InstancePerRequest();
+
+            Autofac.IContainer container = builder.Build();
+            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+
+            // Web Api
+            // Install-Package Microsoft.AspNet.WebApi.WebHost
+            GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver((IContainer)container); //Set the WebApi DependencyResolver
         }
     }
 }
