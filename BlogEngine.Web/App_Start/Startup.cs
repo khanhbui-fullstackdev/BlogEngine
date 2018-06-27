@@ -1,4 +1,8 @@
-﻿
+﻿using System;
+using System.Reflection;
+using System.Threading.Tasks;
+using System.Web.Http;
+using System.Web.Mvc;
 using Autofac;
 using Autofac.Integration.Mvc;
 using Autofac.Integration.WebApi;
@@ -7,17 +11,15 @@ using BlogEngine.Data.Infrastrutures;
 using BlogEngine.Data.Repositories;
 using BlogEngine.Service;
 using Microsoft.Owin;
+using Microsoft.Owin.Security.DataProtection;
 using Owin;
-using System.Reflection;
-using System.Web;
-using System.Web.Http;
-using System.Web.Mvc;
 
 [assembly: OwinStartup(typeof(BlogEngine.Web.App_Start.Startup))]
 
 namespace BlogEngine.Web.App_Start
 {
-    public class Startup
+    // remmeber to create partial class Startup
+    public partial class Startup
     {
         public void Configuration(IAppBuilder app)
         {
@@ -27,37 +29,36 @@ namespace BlogEngine.Web.App_Start
 
         private void ConfigAutoFac(IAppBuilder app)
         {
-            var builder = new ContainerBuilder();
+            var containerBuilder = new ContainerBuilder();
             // Register your Web MVC constructor controllers.
-            builder.RegisterControllers(Assembly.GetExecutingAssembly());
+            containerBuilder.RegisterControllers(Assembly.GetExecutingAssembly());
             // Register your Web API constructor controllers.
-            builder.RegisterApiControllers(Assembly.GetExecutingAssembly()); //Register WebApi Controllers
+            containerBuilder.RegisterApiControllers(Assembly.GetExecutingAssembly()); //Register WebApi Controllers
 
-            builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerRequest();
-            builder.RegisterType<DbFactory>().As<IDbFactory>().InstancePerRequest();
 
-            builder.RegisterType<BlogEngineDbContext>().AsSelf().InstancePerRequest();
+            containerBuilder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerRequest();
+            containerBuilder.RegisterType<DbFactory>().As<IDbFactory>().InstancePerRequest();
+            containerBuilder.RegisterType<BlogEngineDbContext>().AsSelf().InstancePerRequest();
 
             //Asp.net Identity
-            //builder.RegisterType<ApplicationUserStore>().As<IUserStore<ApplicationUser>>().InstancePerRequest();
-            //builder.RegisterType<ApplicationUserManager>().AsSelf().InstancePerRequest();
-            //builder.RegisterType<ApplicationSignInManager>().AsSelf().InstancePerRequest();
-            //builder.Register(c => HttpContext.Current.GetOwinContext().Authentication).InstancePerRequest();
-            //builder.Register(c => app.GetDataProtectionProvider()).InstancePerRequest();
-
+            //containerBuilder.RegisterType<ApplicationUserStore>().As<IUserStore<ApplicationUser>>().InstancePerRequest();
+            //containerBuilder.RegisterType<ApplicationUserManager>().AsSelf().InstancePerRequest();
+            //containerBuilder.RegisterType<ApplicationSignInManager>().AsSelf().InstancePerRequest();
+            //containerBuilder.Register(c => HttpContext.Current.GetOwinContext().Authentication).InstancePerRequest();
+            //containerBuilder.Register(c => app.GetDataProtectionProvider()).InstancePerRequest();
 
             // Repositories
-            builder.RegisterAssemblyTypes(typeof(PostRepository).Assembly)
+            containerBuilder.RegisterAssemblyTypes(typeof(PostRepository).Assembly)
                 .Where(t => t.Name.EndsWith("Repository"))
                 .AsImplementedInterfaces().InstancePerRequest();
 
             // Services
-            builder.RegisterAssemblyTypes(typeof(PostService).Assembly)
-               .Where(t => t.Name.EndsWith("Service"))
-               .AsImplementedInterfaces().InstancePerRequest();
+            containerBuilder.RegisterAssemblyTypes(typeof(PostService).Assembly)
+                 .Where(t => t.Name.EndsWith("Service"))
+                 .AsImplementedInterfaces().InstancePerRequest();
 
-            Autofac.IContainer container = builder.Build();
-            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+            Autofac.IContainer container = containerBuilder.Build();
+            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));//Set the MVC DependencyResolver
 
             // Web Api
             // Install-Package Microsoft.AspNet.WebApi.WebHost
