@@ -18,10 +18,32 @@ namespace BlogEngine.Web.Controllers
 
         // GET: Home
         public ActionResult Index()
-        {
-            //var posts = _postService.GetAllPosts();
-            //return View(posts);
+        {            
             return View();
+        }
+
+        [ChildActionOnly]
+        public ActionResult Header()
+        {
+            return PartialView();
+        }
+
+        [ChildActionOnly]
+        public ActionResult Footer()
+        {
+            return PartialView();
+        }
+
+        [ChildActionOnly]
+        public ActionResult Navigate()
+        {
+            return PartialView();
+        }
+
+        [ChildActionOnly]
+        public ActionResult Slide()
+        {
+            return PartialView();
         }
     }
 }
