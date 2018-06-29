@@ -30,12 +30,7 @@ namespace BlogEngine.Model.Models
 
         [ForeignKey("CategoryID")]
         public virtual Category Category { get; set; }
-
-        public int SubCategoryID { get; set; }
-
-        [ForeignKey("SubCategoryID")]
-        public virtual SubCategory SubCategory { get; set; }
-
+        
         public virtual IEnumerable<PostTag> PostTags { get; set; }
         public virtual IEnumerable<Comment> Comments { get; set; }
     }

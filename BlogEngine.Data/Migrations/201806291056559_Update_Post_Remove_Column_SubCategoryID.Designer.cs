@@ -7,13 +7,13 @@ namespace BlogEngine.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Update_Post_WithNewColumn_SubCategory : IMigrationMetadata
+    public sealed partial class Update_Post_Remove_Column_SubCategoryID : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Update_Post_WithNewColumn_SubCategory));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Update_Post_Remove_Column_SubCategoryID));
         
         string IMigrationMetadata.Id
         {
-            get { return "201806260715490_Update_Post_WithNewColumn_SubCategory"; }
+            get { return "201806291056559_Update_Post_Remove_Column_SubCategoryID"; }
         }
         
         string IMigrationMetadata.Source

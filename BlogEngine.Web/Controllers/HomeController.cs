@@ -1,4 +1,7 @@
-﻿using BlogEngine.Service.IServices;
+﻿using AutoMapper;
+using BlogEngine.Model.Models;
+using BlogEngine.Service.IServices;
+using BlogEngine.Web.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,8 +21,10 @@ namespace BlogEngine.Web.Controllers
 
         // GET: Home
         public ActionResult Index()
-        {           
-            return View();
+        {
+            var postModel = _postService.GetAllPosts();
+            var postViewModel = Mapper.Map<IEnumerable<Post>, IEnumerable<PostViewModel>>(postModel);
+            return View(postViewModel);
         }
 
         [ChildActionOnly]

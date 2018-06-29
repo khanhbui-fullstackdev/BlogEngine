@@ -29,7 +29,7 @@ namespace BlogEngine.Data
         #region On Model Creating
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-
+            
         }
         #endregion
     }

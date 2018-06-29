@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Http;
+using BlogEngine.Web.Mappings;
 
 namespace BlogEngine.Web
 {
@@ -15,7 +16,7 @@ namespace BlogEngine.Web
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-            //AutoMapperConfiguration.Configure();
+            AutoMapperConfiguration.Configure();
             GlobalConfiguration.Configure(WebApiConfig.Register);// Install-Package Microsoft.AspNet.WebApi.WebHost
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

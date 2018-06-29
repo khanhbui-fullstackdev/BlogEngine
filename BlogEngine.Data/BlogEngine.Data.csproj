@@ -63,9 +63,9 @@
     <Compile Include="Migrations\201806251126465_Update_AbstractClass_Audit.Designer.cs">
       <DependentUpon>201806251126465_Update_AbstractClass_Audit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806260715490_Update_Post_WithNewColumn_SubCategory.cs" />
-    <Compile Include="Migrations\201806260715490_Update_Post_WithNewColumn_SubCategory.Designer.cs">
-      <DependentUpon>201806260715490_Update_Post_WithNewColumn_SubCategory.cs</DependentUpon>
+    <Compile Include="Migrations\201806291056559_Update_Post_Remove_Column_SubCategoryID.cs" />
+    <Compile Include="Migrations\201806291056559_Update_Post_Remove_Column_SubCategoryID.Designer.cs">
+      <DependentUpon>201806291056559_Update_Post_Remove_Column_SubCategoryID.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,8 +94,8 @@
     <EmbeddedResource Include="Migrations\201806251126465_Update_AbstractClass_Audit.resx">
       <DependentUpon>201806251126465_Update_AbstractClass_Audit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806260715490_Update_Post_WithNewColumn_SubCategory.resx">
-      <DependentUpon>201806260715490_Update_Post_WithNewColumn_SubCategory.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806291056559_Update_Post_Remove_Column_SubCategoryID.resx">
+      <DependentUpon>201806291056559_Update_Post_Remove_Column_SubCategoryID.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
