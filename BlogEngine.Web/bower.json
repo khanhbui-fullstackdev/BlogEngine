@@ -3,6 +3,15 @@
   "name": "asp.net",
   "private": true,
   "devDependencies": {
-    "boostrap": "3.3.7"
+    "boostrap": "3.3.7",
+    "font-awesome": "4.7.0",
+    "github-activity": "*",
+    "jquery-rss": "3.3.0",
+    "es6-promise": "^4.2.4",
+    "fetch": "2.0.4",
+    "mustache": "^2.3.0"
+  },
+  "resolutions": {
+    "mustache": "^2.3.0"
   }
 }

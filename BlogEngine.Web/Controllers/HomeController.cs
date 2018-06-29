@@ -18,9 +18,7 @@ namespace BlogEngine.Web.Controllers
 
         // GET: Home
         public ActionResult Index()
-        {
-            //var posts = _postService.GetAllPosts();
-            //return View(posts);
+        {           
             return View();
         }
     }
