@@ -176,6 +176,8 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="ConnectionStrings.config" />
+    <Content Include=".bowerrc" />
+    <Content Include="bower.json" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -191,6 +193,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Assets\Admin\" />
     <Folder Include="Assets\Clients\js\controllers\" />
+    <Folder Include="Scripts\Plugins\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
