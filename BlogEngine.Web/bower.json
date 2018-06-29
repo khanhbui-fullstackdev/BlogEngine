@@ -9,7 +9,8 @@
     "jquery-rss": "3.3.0",
     "es6-promise": "^4.2.4",
     "fetch": "2.0.4",
-    "mustache": "^2.3.0"
+    "mustache": "^2.3.0",
+    "bootstrap-treeview": "1.2.0"
   },
   "resolutions": {
     "mustache": "^2.3.0"

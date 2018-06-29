@@ -21,5 +21,29 @@ namespace BlogEngine.Web.Controllers
         {           
             return View();
         }
+
+        [ChildActionOnly]
+        public PartialViewResult Header()
+        {
+            return PartialView();
+        }
+
+        [ChildActionOnly]
+        public PartialViewResult Footer()
+        {
+            return PartialView();
+        }
+
+        [ChildActionOnly]
+        public PartialViewResult Category()
+        {
+            return PartialView();
+        }
+
+        [ChildActionOnly]
+        public PartialViewResult LastestComment()
+        {
+            return PartialView();
+        }
     }
 }
