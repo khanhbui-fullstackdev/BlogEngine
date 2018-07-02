@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlogEngine.Model.Abstracts;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Web;
 
 namespace BlogEngine.Web.ViewModels
 {
-    public class PostViewModel
+    public class PostViewModel : AuditViewModel
     {
         public int ID { get; set; }
 
@@ -17,19 +18,31 @@ namespace BlogEngine.Web.ViewModels
 
         public string Image { get; set; }
 
-        public string Summary { get; set; }
-
+        private string summary;
+        public string Summary
+        {
+            get { return summary; }
+            set
+            {
+                summary = value;
+                if (summary.Length > 250)
+                {
+                    summary = value.Remove(251);
+                }
+            }
+        }
+        
         public string Content { get; set; }
 
         public int CategoryID { get; set; }
 
-        //public virtual Category Category { get; set; }
+        public virtual CategoryViewModel Category { get; set; }
 
         public int SubCategoryID { get; set; }
 
-        //public virtual SubCategory SubCategory { get; set; }
+        public virtual SubCategoryViewModel SubCategory { get; set; }
 
-        //public virtual IEnumerable<PostTag> PostTags { get; set; }
-        //public virtual IEnumerable<Comment> Comments { get; set; }
+        public virtual IEnumerable<PostTagViewModel> PostTags { get; set; }
+        public virtual IEnumerable<CommentViewModel> Comments { get; set; }        
     }
 }

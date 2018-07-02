@@ -67,6 +67,14 @@
     <Compile Include="Migrations\201806291056559_Update_Post_Remove_Column_SubCategoryID.Designer.cs">
       <DependentUpon>201806291056559_Update_Post_Remove_Column_SubCategoryID.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807020417024_Update_Audit_AddNewProperty_AuthorName.cs" />
+    <Compile Include="Migrations\201807020417024_Update_Audit_AddNewProperty_AuthorName.Designer.cs">
+      <DependentUpon>201807020417024_Update_Audit_AddNewProperty_AuthorName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807020421517_Update_Audit_RemoveProperty_AuthorName.cs" />
+    <Compile Include="Migrations\201807020421517_Update_Audit_RemoveProperty_AuthorName.Designer.cs">
+      <DependentUpon>201807020421517_Update_Audit_RemoveProperty_AuthorName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IRepositories\IPostRepository.cs" />
@@ -96,6 +104,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806291056559_Update_Post_Remove_Column_SubCategoryID.resx">
       <DependentUpon>201806291056559_Update_Post_Remove_Column_SubCategoryID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807020417024_Update_Audit_AddNewProperty_AuthorName.resx">
+      <DependentUpon>201807020417024_Update_Audit_AddNewProperty_AuthorName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807020421517_Update_Audit_RemoveProperty_AuthorName.resx">
+      <DependentUpon>201807020421517_Update_Audit_RemoveProperty_AuthorName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
