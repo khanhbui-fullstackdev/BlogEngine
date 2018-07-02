@@ -34,6 +34,6 @@ namespace BlogEngine.Model.Models
 
         public virtual IEnumerable<Post> Posts { get; set; }
 
-        public virtual IEnumerable<SubCategory> SubCategories { get; set; }
+        public virtual ICollection<SubCategory> SubCategories { get; set; }
     }
 }

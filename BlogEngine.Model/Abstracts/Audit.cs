@@ -13,5 +13,7 @@ namespace BlogEngine.Model.Abstracts
 
         [StringLength(255), Column(TypeName = "varchar")]
         public string UpdatedBy { get; set; }
+
+        public bool Status { get; set; }
     }
 }

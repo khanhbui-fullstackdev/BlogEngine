@@ -158,6 +158,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\BlogEngineConnectionString.mdf" />
+    <Content Include="App_Data\BlogEngineConnectionString_log.ldf">
+      <DependentUpon>BlogEngineConnectionString.mdf</DependentUpon>
+    </Content>
     <Content Include="Assets\Clients\css\custom.css" />
     <Content Include="Assets\Clients\css\styles.css" />
     <Content Include="Assets\Clients\images\github-chart.png" />
@@ -169,6 +173,7 @@
     <Content Include="Assets\Clients\images\projects\project-4.png" />
     <Content Include="Assets\Clients\images\projects\project-5.png" />
     <Content Include="Assets\Clients\images\projects\project-featured.png" />
+    <Content Include="Assets\Clients\js\controllers\categoryController.js" />
     <Content Include="Assets\Clients\js\libs\main.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -1161,9 +1166,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Assets\Admin\" />
-    <Folder Include="Assets\Clients\js\controllers\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BlogEngine.Common\BlogEngine.Common.csproj">

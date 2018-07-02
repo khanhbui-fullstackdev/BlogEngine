@@ -45,7 +45,8 @@ namespace BlogEngine.Data.Migrations
                         Slug = "csharp",
                         Image = "",
                         CreatedDate = DateTime.Now,
-                        CreatedBy = "khanh.buivuong@nashtechglobal.com"
+                        CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                        Status = true
                     },
                     new Category()
                     {
@@ -54,7 +55,8 @@ namespace BlogEngine.Data.Migrations
                         Slug = "asp.net-core",
                         Image = "",
                         CreatedDate = DateTime.Now,
-                        CreatedBy = "khanh.buivuong@nashtechglobal.com"
+                        CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                        Status = true
                     },
                     new Category()
                     {
@@ -63,7 +65,8 @@ namespace BlogEngine.Data.Migrations
                         Slug = "asp.net-web-application",
                         Image = "",
                         CreatedDate = DateTime.Now,
-                        CreatedBy = "khanh.buivuong@nashtechglobal.com"
+                        CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                        Status = true
                     },
                     new Category()
                     {
@@ -72,7 +75,8 @@ namespace BlogEngine.Data.Migrations
                         Slug = "windows-desktop-application",
                         Image = "",
                         CreatedDate = DateTime.Now,
-                        CreatedBy = "khanh.buivuong@nashtechglobal.com"
+                        CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                        Status = true
                     },
                     new Category()
                     {
@@ -81,7 +85,8 @@ namespace BlogEngine.Data.Migrations
                         Slug = "html-css-boostrap",
                         Image = "",
                         CreatedDate = DateTime.Now,
-                        CreatedBy = "khanh.buivuong@nashtechglobal.com"
+                        CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                        Status = true
                     },
                     new Category()
                     {
@@ -90,7 +95,8 @@ namespace BlogEngine.Data.Migrations
                         Slug = "javascript-framework",
                         Image = "",
                         CreatedDate = DateTime.Now,
-                        CreatedBy = "khanh.buivuong@nashtechglobal.com"
+                        CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                        Status = true
                     },
                     new Category()
                     {
@@ -99,7 +105,8 @@ namespace BlogEngine.Data.Migrations
                         Slug = "entity-framework",
                         Image = "",
                         CreatedDate = DateTime.Now,
-                        CreatedBy = "khanh.buivuong@nashtechglobal.com"
+                        CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                        Status = true
                     },
                     new Category()
                     {
@@ -108,7 +115,8 @@ namespace BlogEngine.Data.Migrations
                         Slug = "database",
                         Image = "",
                         CreatedDate = DateTime.Now,
-                        CreatedBy = "khanh.buivuong@nashtechglobal.com"
+                        CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                        Status = true
                     },
                     new Category()
                     {
@@ -117,7 +125,8 @@ namespace BlogEngine.Data.Migrations
                         Slug = "security",
                         Image = "",
                         CreatedDate = DateTime.Now,
-                        CreatedBy = "khanh.buivuong@nashtechglobal.com"
+                        CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                        Status = true
                     },
                 };
                 context.Categories.AddRange(categories);
@@ -139,7 +148,8 @@ namespace BlogEngine.Data.Migrations
                         Slug = "asp.net-mvc5",
                         CategoryID = 3,
                         CreatedDate = DateTime.Now,
-                        CreatedBy = "khanh.buivuong@nashtechglobal.com"
+                        CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                        Status = true
                     },
                     new SubCategory()
                     {
@@ -147,7 +157,8 @@ namespace BlogEngine.Data.Migrations
                         Slug = "asp.net-mvc-core",
                         CategoryID = 2,
                         CreatedDate = DateTime.Now,
-                        CreatedBy = "khanh.buivuong@nashtechglobal.com"
+                        CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                        Status = true
                     },
                     new SubCategory()
                     {
@@ -155,7 +166,8 @@ namespace BlogEngine.Data.Migrations
                         Slug = "asp.net-web-form",
                         CategoryID = 3,
                         CreatedDate = DateTime.Now,
-                        CreatedBy = "khanh.buivuong@nashtechglobal.com"
+                        CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                        Status = true
                     },
                     new SubCategory()
                     {
@@ -163,7 +175,8 @@ namespace BlogEngine.Data.Migrations
                         Slug = "winform",
                         CategoryID = 4,
                         CreatedDate = DateTime.Now,
-                        CreatedBy = "khanh.buivuong@nashtechglobal.com"
+                        CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                        Status = true
                     },
                     new SubCategory()
                     {
@@ -171,7 +184,8 @@ namespace BlogEngine.Data.Migrations
                         Slug = "winform-presentation-foundataion",
                         CategoryID = 4,
                         CreatedDate = DateTime.Now,
-                        CreatedBy = "khanh.buivuong@nashtechglobal.com"
+                        CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                        Status = true
                     },
                     new SubCategory()
                     {
@@ -179,7 +193,8 @@ namespace BlogEngine.Data.Migrations
                         Slug = "jquery",
                         CategoryID = 6,
                         CreatedDate = DateTime.Now,
-                        CreatedBy = "khanh.buivuong@nashtechglobal.com"
+                        CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                        Status = true
                     },
                     new SubCategory()
                     {
@@ -187,7 +202,8 @@ namespace BlogEngine.Data.Migrations
                         Slug = "knockoutjs",
                         CategoryID = 6,
                         CreatedDate = DateTime.Now,
-                        CreatedBy = "khanh.buivuong@nashtechglobal.com"
+                        CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                        Status = true
                     },
                     new SubCategory()
                     {
@@ -195,7 +211,8 @@ namespace BlogEngine.Data.Migrations
                         Slug = "angularjs",
                         CategoryID = 6,
                         CreatedDate = DateTime.Now,
-                        CreatedBy = "khanh.buivuong@nashtechglobal.com"
+                        CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                        Status = true
                     },
                     new SubCategory()
                     {
@@ -203,7 +220,8 @@ namespace BlogEngine.Data.Migrations
                         Slug = "angular5",
                         CategoryID = 6,
                         CreatedDate = DateTime.Now,
-                        CreatedBy = "khanh.buivuong@nashtechglobal.com"
+                        CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                        Status = true
                     },
                     new SubCategory()
                     {
@@ -211,7 +229,8 @@ namespace BlogEngine.Data.Migrations
                         Slug = "Reactjs",
                         CategoryID = 6,
                         CreatedDate = DateTime.Now,
-                        CreatedBy = "khanh.buivuong@nashtechglobal.com"
+                        CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                        Status = true
                     },
                     new SubCategory()
                     {
@@ -219,7 +238,8 @@ namespace BlogEngine.Data.Migrations
                         Slug = "vuejs",
                         CategoryID = 6,
                         CreatedDate = DateTime.Now,
-                        CreatedBy = "khanh.buivuong@nashtechglobal.com"
+                        CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                        Status = true
                     },
                     new SubCategory()
                     {
@@ -227,7 +247,8 @@ namespace BlogEngine.Data.Migrations
                         Slug = "mysql",
                         CategoryID = 8,
                         CreatedDate = DateTime.Now,
-                        CreatedBy = "khanh.buivuong@nashtechglobal.com"
+                        CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                        Status = true
                     },
                     new SubCategory()
                     {
@@ -235,7 +256,8 @@ namespace BlogEngine.Data.Migrations
                         Slug = "microsoft-sql-server",
                         CategoryID = 8,
                         CreatedDate = DateTime.Now,
-                        CreatedBy = "khanh.buivuong@nashtechglobal.com"
+                        CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                        Status = true
                     },
                     new SubCategory()
                     {
@@ -243,7 +265,8 @@ namespace BlogEngine.Data.Migrations
                         Slug = "oracle",
                         CategoryID = 8,
                         CreatedDate = DateTime.Now,
-                        CreatedBy = "khanh.buivuong@nashtechglobal.com"
+                        CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                        Status = true
                     },
                     new SubCategory()
                     {
@@ -251,7 +274,8 @@ namespace BlogEngine.Data.Migrations
                         Slug = "oop",
                         CategoryID = 1,
                         CreatedDate = DateTime.Now,
-                        CreatedBy = "khanh.buivuong@nashtechglobal.com"
+                        CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                        Status = true
                     },
                 };
                 context.SubCategories.AddRange(subCategories);
@@ -275,6 +299,7 @@ namespace BlogEngine.Data.Migrations
                         Summary = "Today we released a prototype of a C# feature called “nullable reference types“, which is intended to help you find and fix most of your null-related bugs before they blow up at runtime. We would love for you to install the prototype and try it out on your code! (Or maybe a copy of it!",
                         CreatedDate = DateTime.Now,
                         CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                        Status = true
                     },
                     new Post()
                     {
@@ -284,6 +309,7 @@ namespace BlogEngine.Data.Migrations
                         Summary=@"We released .NET Core 2.1.1. This update includes .NET Core SDK 2.1.301, ASP.NET Core 2.1.1 and .NET Core 2.1.1. See .NET Core 2.1.1 release notes for complete details on the release. Quality Updates CLI [4050c6374] The “pack” command under ‘buildCrossTargeting’ for ‘Microsoft.DotNet.MSBuildSdkResolver’ now throws a “NU5104” warning/error because the SDK stage0 was changed to “2.1.300” [change was",
                         CreatedDate = DateTime.Now,
                         CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                        Status = true
                     }
                 };
                 context.Posts.AddRange(posts);

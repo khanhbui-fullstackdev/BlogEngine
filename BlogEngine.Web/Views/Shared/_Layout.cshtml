@@ -30,25 +30,28 @@
     <link href="~/Assets/Clients/css/custom.css" rel="stylesheet" />
 </head>
 <body>
-    @{ Html.RenderPartial("Header"); }
+    @{ Html.RenderAction("Header", "Home"); }
 
     <div class="container sections-wrapper">
         <div class="row">
             @RenderBody()
 
             <div class="secondary col-md-4 col-sm-12 col-xs-12">
-                @{ Html.RenderPartial("Category"); }
-                @{ Html.RenderPartial("LastestComment"); }
+                @{ Html.RenderAction("Category", "Home"); }
+                @{ Html.RenderAction("LastestComment", "Home"); }
             </div>
         </div>
     </div>
 
-    @{ Html.RenderPartial("Footer"); }
+    <!--Using RenderPartial when render static Html-->
+    @{ Html.RenderAction("Footer", "Home"); }
+
     <!-- Javascript -->
     <!--jQuery v3.3.1-->
     <script src="~/Scripts/Plugins/jquery/dist/jquery.min.js"></script>
     <!--Bootstrap v3.3.7-->
     <script src="~/Scripts/Plugins/boostrap/dist/js/bootstrap.min.js"></script>
     <script src="~/Scripts/Plugins/bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+    <script src="~/Assets/Clients/js/controllers/categoryController.js"></script>
 </body>
 </html>

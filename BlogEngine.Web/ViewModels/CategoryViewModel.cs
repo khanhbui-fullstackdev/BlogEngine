@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace BlogEngine.Web.ViewModels
 {
-    public class CategoryViewModel : Audit
+    public class CategoryViewModel : AuditViewModel
     {
         public int ID { get; set; }
 
@@ -17,6 +17,6 @@ namespace BlogEngine.Web.ViewModels
 
         public virtual IEnumerable<PostViewModel> Posts { get; set; }
 
-        public virtual IEnumerable<SubCategoryViewModel> SubCategories { get; set; }
+        public virtual ICollection<SubCategoryViewModel> SubCategories { get; set; }
     }
 }
