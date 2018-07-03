@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
+using BlogEngine.Common.Helpers;
 using BlogEngine.Model.Models;
 using BlogEngine.Service.IServices;
 using BlogEngine.Web.ViewModels;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -59,20 +61,29 @@ namespace BlogEngine.Web.Controllers
                 var categoriesViewModel = Mapper.Map<IEnumerable<Category>, IEnumerable<CategoryViewModel>>(categoriesModel);
                 // https://stackoverflow.com/questions/16949520/circular-reference-detected-exception-while-serializing-object-to-json
                 // https://stackoverflow.com/questions/31008219/a-circular-reference-was-detected-while-serializing-an-object-of-type-system-r
-                var result = JsonConvert.SerializeObject
+
+                TreeViewModel treeViewModel = new TreeViewModel();
+                List<TreeViewModel> treeViewModels = treeViewModel.TreeViewMappingCategory(categoriesViewModel);
+
+                var jsonData = JsonConvert.SerializeObject
                 (
-                    categoriesViewModel, 
+                    treeViewModels,
                     Formatting.Indented,
                     new JsonSerializerSettings
                     {
-                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+                        //https://forums.asp.net/t/2127952.aspx?How+to+get+the+JSON+fields+in+all+lowercase
+                        //convert C# properties convent to JSON properties' convention. Ex: FirstName --> firstName
+                        ContractResolver = new CamelCasePropertyNamesContractResolver()
                     }
                 );
+
+                jsonData = jsonData.Replace("_", "data-");
 
                 return Json(new
                 {
                     status = true,
-                    data = result
+                    data = jsonData
                 }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)

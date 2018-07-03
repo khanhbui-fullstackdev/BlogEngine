@@ -1,7 +1,7 @@
 ﻿var categoryController = {
     init: function () {
         categoryController.getCategories();
-        categoryController.registerEvents();       
+        categoryController.registerEvents();
     },
     registerEvents: function () {
         // Event
@@ -10,11 +10,20 @@
         var ajaxConfig = {
             url: '/Home/GetCategories',
             type: 'GET',
-            dataType: 'json',            
+            dataType: 'json',
             success: function (result, status, xhr) {
                 if (result.status) {
-                    
-                    console.log(result.data);
+                    var data = JSON.parse(result.data);
+
+                    var treeConfig = {
+                        data: data,
+                        showTags: true,
+                        enableLinks: true,                        
+                        highlightSelected:false,
+                        levels: 1
+                    };
+                    //$('#tree').attr('tags',[])
+                    $('#tree').treeview(treeConfig);
                 } else {
                     console.log(result.errorMessage);
                 }

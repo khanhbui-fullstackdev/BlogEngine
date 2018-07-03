@@ -3,6 +3,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Mvc;
+using System.Web.Services.Description;
 using Autofac;
 using Autofac.Integration.Mvc;
 using Autofac.Integration.WebApi;
@@ -12,6 +13,7 @@ using BlogEngine.Data.Repositories;
 using BlogEngine.Service;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.DataProtection;
+using Newtonsoft.Json.Serialization;
 using Owin;
 
 [assembly: OwinStartup(typeof(BlogEngine.Web.App_Start.Startup))]
@@ -63,6 +65,6 @@ namespace BlogEngine.Web.App_Start
             // Web Api
             // Install-Package Microsoft.AspNet.WebApi.WebHost
             GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver((IContainer)container); //Set the WebApi DependencyResolver
-        }
+        }       
     }
 }
