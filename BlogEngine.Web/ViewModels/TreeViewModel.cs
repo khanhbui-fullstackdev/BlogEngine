@@ -42,7 +42,7 @@ namespace BlogEngine.Web.ViewModels
                 treeViewModel._parentid = categoryViewModel.ID;
                 treeViewModel.Text = categoryViewModel.Name;
                 treeViewModel._slug = categoryViewModel.Slug;
-                treeViewModel.Href = "/category/" + categoryViewModel.ID + "/" + categoryViewModel.Slug; //category/{id}/{slug}
+                treeViewModel.Href = "/category/" + categoryViewModel.Slug + "/" + categoryViewModel.ID; //category/{slug}/{id}
                 treeViewModel.Tags = new List<int>();
                 if (categoryViewModel.SubCategories.Count != 0)
                 {
@@ -54,7 +54,7 @@ namespace BlogEngine.Web.ViewModels
                         nodeViewModel._nodeid = subcategory.ID;
                         nodeViewModel.Text = subcategory.Name;
                         nodeViewModel._slug = subcategory.Slug;
-                        nodeViewModel.Href = "/subcategory/" + subcategory.ID + "/" + subcategory.Slug;
+                        nodeViewModel.Href = "/subcategory/" + subcategory.Slug + "/" + subcategory.ID;
                         treeViewModel.Nodes.Add(nodeViewModel);
                     }
                 }

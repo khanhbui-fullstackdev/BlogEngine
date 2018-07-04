@@ -15,15 +15,22 @@ namespace BlogEngine.Web
 
             routes.MapRoute(
                 name: "Post",
-                url: "post/{id}/{slug}",
+                url: "post/{slug}/{id}",
                 defaults: new { controller = "Post", action = "Index", id = UrlParameter.Optional },
                 namespaces: new string[] { "BlogEngine.Web.Controllers" }
             );
 
             routes.MapRoute(
                name: "Posts By Category",
-               url: "category/{id}/{slug}",
+               url: "category/{slug}/{id}",
                defaults: new { controller = "Post", action = "PostsByCategory", id = UrlParameter.Optional },
+               namespaces: new string[] { "BlogEngine.Web.Controllers" }
+            );
+
+            routes.MapRoute(
+               name: "Posts By Sub Category",
+               url: "subcategory/{slug}/{id}",
+               defaults: new { controller = "Post", action = "PostsBySubCategory", id = UrlParameter.Optional },
                namespaces: new string[] { "BlogEngine.Web.Controllers" }
             );
 

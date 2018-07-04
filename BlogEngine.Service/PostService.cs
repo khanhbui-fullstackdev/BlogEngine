@@ -46,7 +46,8 @@ namespace BlogEngine.Service
 
         public IEnumerable<Post> GetPostsBySubcategory(int subcategoryId)
         {
-            throw new NotImplementedException();
+            var posts = _postRepository.GetPostsBySubCategory(subcategoryId);
+            return posts;
         }
     }
 }

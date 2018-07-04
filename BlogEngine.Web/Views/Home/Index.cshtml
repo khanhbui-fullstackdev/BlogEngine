@@ -13,7 +13,7 @@
             <div class="content">
                 @foreach (var post in posts)
                 {
-                    var blogUrl = "/post/" + post.ID + "/" + post.Slug;
+                    var blogUrl = "/post/" + post.Slug + "/" + post.ID;
                     <div class="item row">
                         <a class="col-md-4 col-sm-4 col-xs-12" href="@blogUrl" target="_blank">
                             <img class="img-responsive project-image"
@@ -27,7 +27,7 @@
                                 <a href="#">
                                     <span class="badge">@post.CreatedBy</span>
                                 </a>
-                                <a href="#"><small class="text-primary number-of-comments">@(post.Comments.Count()) comments</small> </a> 
+                                <a href="#"><small class="text-primary number-of-comments">@(post.Comments.Count()) comments</small> </a>
                             </h3>
                             <p>@(post.Summary)...</p>
                             <p>

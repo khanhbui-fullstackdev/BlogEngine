@@ -35,9 +35,11 @@ namespace BlogEngine.Web.Controllers
             return View(postsViewModel);
         }
 
-        public ActionResult PostsBySubCategory(int subcategoryId)
+        public ActionResult PostsBySubCategory(int id)
         {
-            return View();
+            var postsModel = _postService.GetPostsBySubcategory(id);
+            var postsViewModel = Mapper.Map<IEnumerable<Post>, IEnumerable<PostViewModel>>(postsModel);
+            return View(postsViewModel);
         }
     }
 }

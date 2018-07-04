@@ -33,5 +33,11 @@ namespace BlogEngine.Service
             var categories = _categoryRepository.GetAllCategoriesWithSubCategories();
             return categories;
         }
+
+        public IEnumerable<Category> GetCategoriesBySubCategory(int subcategoryId)
+        {
+            
+            throw new NotImplementedException();
+        }
     }
 }

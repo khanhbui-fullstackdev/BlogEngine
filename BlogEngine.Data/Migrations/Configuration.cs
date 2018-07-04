@@ -319,27 +319,62 @@ Tony Hoare, one of the absolute giants of computer science and recipient of the 
                         Status = true,
                         Quote = "Because of your smile, you make life more beautiful",
                         Content =@"CLI
-[4050c6374] The “pack” command under ‘buildCrossTargeting’ for ‘Microsoft.DotNet.MSBuildSdkResolver’ now throws a “NU5104” warning/error because the SDK stage0 was changed to “2.1.300” [change was intended].
-[ea539c7f6] Add retry when Directory.Move (#9313)
-CoreCLR
-[13ea3c2c8e] Fix alternate stack for Alpine docker on SELinux (#17936) (#17975)
-[88db627a97] Update g_highest_address and g_lowest_address in StompWriteBarrier(WriteBarrierOp::StompResize) on ARM (#18107)
-[0ea5fc4456] Use sysconf(_SC_NPROCESSORS_CONF) instead of sysconf(_SC_NPROCESSORS_ONLN) in PAL and GC on ARM and ARM64
-CoreFX
-[3700c5b793] Update to a xUnit Performance Api that has a bigger Etw buffer size. … (#30328)
-[6b38470265] Use _SC_NPROCESSORS_CONF instead of _SC_NPROCESSORS_ONLN in Unix_ProcessorCountTest on ARM/ARM64 (#30132)
-[fe653a068c] check SwitchingProtocol before ContentLength (#29948) (#29993)
-[f11f3e1fcf] Fix handling of cursor position when other ESC sequences already in stdin (#29897) (#29923)
-[77a4a19622] [release/2.1] Port nano test fixes (#29995)
-[7ce9270ac7] Fix Sockets hang caused by concurrent Socket disposal (#29786) (#29846)
-[ed23f5391f] Fix terminfo number reading with 32-bit integers (#29655) (#29765)
-[1c34018f14] Fix getting attributes for sharing violation files (#29790) (#29832)
-[bc71849976] [release/2.1] Fix deadlock when waiting for process exit in Console.CancelKeyPress (#29749)
-[adc1c4d0d5] Fix WebSocket split UTF8 read #29834 (#29840) (#29853)
-WCF
-[0a99dd88] Add net461 as a supported framework for S.SM.Security.
-[45855085] Generate ThisAssembly.cs, update the version and links for svcutil.xmlserializer (#2893)
-[68457365] Target svcutil.xmlserializer app at dotnetcore. (#2855)"
+                                    [4050c6374] The “pack” command under ‘buildCrossTargeting’ for ‘Microsoft.DotNet.MSBuildSdkResolver’ now throws a “NU5104” warning/error because the SDK stage0 was changed to “2.1.300” [change was intended].
+                                    [ea539c7f6] Add retry when Directory.Move (#9313)
+                                    CoreCLR
+                                    [13ea3c2c8e] Fix alternate stack for Alpine docker on SELinux (#17936) (#17975)
+                                    [88db627a97] Update g_highest_address and g_lowest_address in StompWriteBarrier(WriteBarrierOp::StompResize) on ARM (#18107)
+                                    [0ea5fc4456] Use sysconf(_SC_NPROCESSORS_CONF) instead of sysconf(_SC_NPROCESSORS_ONLN) in PAL and GC on ARM and ARM64
+                                    CoreFX
+                                    [3700c5b793] Update to a xUnit Performance Api that has a bigger Etw buffer size. … (#30328)
+                                    [6b38470265] Use _SC_NPROCESSORS_CONF instead of _SC_NPROCESSORS_ONLN in Unix_ProcessorCountTest on ARM/ARM64 (#30132)
+                                    [fe653a068c] check SwitchingProtocol before ContentLength (#29948) (#29993)
+                                    [f11f3e1fcf] Fix handling of cursor position when other ESC sequences already in stdin (#29897) (#29923)
+                                    [77a4a19622] [release/2.1] Port nano test fixes (#29995)
+                                    [7ce9270ac7] Fix Sockets hang caused by concurrent Socket disposal (#29786) (#29846)
+                                    [ed23f5391f] Fix terminfo number reading with 32-bit integers (#29655) (#29765)
+                                    [1c34018f14] Fix getting attributes for sharing violation files (#29790) (#29832)
+                                    [bc71849976] [release/2.1] Fix deadlock when waiting for process exit in Console.CancelKeyPress (#29749)
+                                    [adc1c4d0d5] Fix WebSocket split UTF8 read #29834 (#29840) (#29853)
+                                    WCF
+                                    [0a99dd88] Add net461 as a supported framework for S.SM.Security.
+                                    [45855085] Generate ThisAssembly.cs, update the version and links for svcutil.xmlserializer (#2893)
+                                    [68457365] Target svcutil.xmlserializer app at dotnetcore. (#2855)"
+                    },
+                    new Post()
+                    {
+                        Name = "JQuery 3.3.1 – Fixed Dependencies In Release Tag",
+                        Slug = "jquery-3-3-1–fixed-dependencies-in-release-tag",
+                        CategoryID = 2,
+                        Summary = @"We encountered an issue in the release for jQuery 3.3.0, so we’ve immediately released another tag. The code itself is identical, but our release dependencies (only used during release) were added to the dependencies of the jQuery package itself due to the new behavior of npm in version 5+.",
+                        CreatedDate = DateTime.Now,
+                        CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                        Status = true,
+                        Quote = "Jquery is always awesome ! Cheer",
+                        Content = @"We encountered an issue in the release for jQuery 3.3.0, so we’ve immediately released another tag. The code itself is identical, but our release dependencies (only used during release) were added to the dependencies of the jQuery package itself due to the new behavior of npm in version 5+.
+                                    jQuery 3.3.1 is now recommended if installing from npm or GitHub. If using jQuery on any CDN, the built file only differs in the version number.
+                                    We apologize for any inconvenience and have updated our release script to account for this issue.
+                                    Please see the jQuery 3.3.0 blog post for all relevant code changes in this release.
+                                    Download
+                                    You can get the files from the jQuery CDN, or link to them directly:
+
+                                    https://code.jquery.com/jquery-3.3.1.js
+
+                                    https://code.jquery.com/jquery-3.3.1.min.js
+
+                                    You can also get this release from npm:
+
+                                    npm install jquery@3.3.1
+
+                                    Slim build
+                                    Sometimes you don’t need ajax, or you prefer to use one of the many standalone libraries that focus on ajax requests. And often it is simpler to use a combination of CSS and class manipulation for all your web animations. Along with the regular version of jQuery that includes the ajax and effects modules, we’ve released a “slim” version that excludes these modules. The size of jQuery is very rarely a load performance concern these days, but the slim build is about 6k gzipped bytes smaller than the regular version – 24k vs 30k. These files are also available in the npm package and on the CDN:
+
+                                    https://code.jquery.com/jquery-3.3.1.slim.js
+                                    https://code.jquery.com/jquery-3.3.1.slim.min.js
+
+                                    These updates are already available as the current versions on npm and Bower. Information on all the ways to get jQuery is available at https://jquery.com/download/. Public CDNs receive their copies today, please give them a few days to post the files. If you’re anxious to get a quick start, use the files on our CDN until they have a chance to update.
+
+                                    8 THOUGHTS ON “JQUERY 3.3.1 – FIXED DEPENDENCIES IN RELEASE TAG”"
                     }
                 };
                 context.Posts.AddRange(posts);
