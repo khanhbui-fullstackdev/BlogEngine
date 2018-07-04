@@ -9,6 +9,7 @@ select	post.Name [PostName],
 		subCate.Name[SubCateName],
 		subCate.ID [SubId]
 from	SubCategories subcate, Posts post, Categories cate
-where	subcate.ID=15 and
+where	subcate.ID=10	and 
+		cate.ID=6		and
 		post.CategoryID = cate.ID and
 		subcate.CategoryID = cate.ID

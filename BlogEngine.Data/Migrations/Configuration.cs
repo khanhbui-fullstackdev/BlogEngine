@@ -345,7 +345,7 @@ Tony Hoare, one of the absolute giants of computer science and recipient of the 
                     {
                         Name = "JQuery 3.3.1 – Fixed Dependencies In Release Tag",
                         Slug = "jquery-3-3-1–fixed-dependencies-in-release-tag",
-                        CategoryID = 2,
+                        CategoryID = 6,
                         Summary = @"We encountered an issue in the release for jQuery 3.3.0, so we’ve immediately released another tag. The code itself is identical, but our release dependencies (only used during release) were added to the dependencies of the jQuery package itself due to the new behavior of npm in version 5+.",
                         CreatedDate = DateTime.Now,
                         CreatedBy = "khanh.buivuong@nashtechglobal.com",
