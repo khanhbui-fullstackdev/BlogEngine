@@ -25,6 +25,7 @@ namespace BlogEngine.Web.Controllers
         {
             var postModel = _postService.GetPostById(id);
             var postViewModel = Mapper.Map<Post, PostViewModel>(postModel);
+            ViewBag.CategoryId = postViewModel.CategoryID;
             return View(postViewModel);
         }
 
@@ -32,6 +33,7 @@ namespace BlogEngine.Web.Controllers
         {
             var postsModel = _postService.GetPostsByCategory(id);
             var postsViewModel = Mapper.Map<IEnumerable<Post>, IEnumerable<PostViewModel>>(postsModel);
+            ViewBag.CategoryId = id;
             return View(postsViewModel);
         }
 
@@ -39,6 +41,7 @@ namespace BlogEngine.Web.Controllers
         {
             var postsModel = _postService.GetPostsBySubcategory(id);
             var postsViewModel = Mapper.Map<IEnumerable<Post>, IEnumerable<PostViewModel>>(postsModel);
+            ViewBag.SubCategoryId = id;
             return View(postsViewModel);
         }
     }

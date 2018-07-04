@@ -36,7 +36,7 @@
     <div class="container sections-wrapper">
         <div class="row">
             <div class="primary col-md-8 col-sm-12 col-xs-12">
-                @{ Html.RenderAction("BreadCrumb", "BreadCrumb"); }
+                @{ Html.RenderAction("BreadCrumb", "BreadCrumb", new { categoryId = ViewBag.CategoryId, subcategoryId = ViewBag.SubCategoryId }); }
                 @RenderBody()
             </div>
 

@@ -31,12 +31,12 @@ namespace BlogEngine.Web.ViewModels
                 }
             }
         }
-        
+
         public string Content { get; set; }
 
         public string Quote { get; set; }
 
-        //public int CategoryID { get; set; }
+        public int CategoryID { get; set; }
 
         //public virtual CategoryViewModel Category { get; set; }
 
