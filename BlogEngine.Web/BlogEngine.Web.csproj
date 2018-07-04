@@ -164,6 +164,7 @@
     </Content>
     <Content Include="Assets\Clients\css\custom.css" />
     <Content Include="Assets\Clients\css\styles.css" />
+    <Content Include="Assets\Clients\images\about-me.jpg" />
     <Content Include="Assets\Clients\images\github-chart.png" />
     <Content Include="Assets\Clients\images\profile.png" />
     <Content Include="Assets\Clients\images\projects\project-1.png" />
@@ -177,6 +178,7 @@
     <Content Include="Assets\Clients\js\libs\main.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Queries\BlogEngine.Query.sql" />
     <Content Include="Scripts\Plugins\boostrap\dist\css\bootstrap-theme.css" />
     <Content Include="Scripts\Plugins\boostrap\dist\css\bootstrap-theme.min.css" />
     <Content Include="Scripts\Plugins\boostrap\dist\css\bootstrap.css" />
@@ -672,12 +674,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstracts\AuditViewModel.cs" />
+    <Compile Include="Abstracts\TreeViewBase.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1160,6 +1165,9 @@
     <Content Include="Scripts\Plugins\bootstrap-treeview\LICENSE" />
     <Content Include="Scripts\Plugins\bootstrap-treeview\package.json" />
     <Content Include="Scripts\Plugins\bootstrap-treeview\README.md" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Post\Index.cshtml" />
+    <Content Include="Views\Post\PostsByCategory.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -14,9 +14,31 @@ namespace BlogEngine.Web
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Post",
+                url: "post/{id}/{slug}",
+                defaults: new { controller = "Post", action = "Index", id = UrlParameter.Optional },
+                namespaces: new string[] { "BlogEngine.Web.Controllers" }
+            );
+
+            routes.MapRoute(
+               name: "Posts By Category",
+               url: "category/{id}/{slug}",
+               defaults: new { controller = "Post", action = "PostsByCategory", id = UrlParameter.Optional },
+               namespaces: new string[] { "BlogEngine.Web.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "About Me",
+                url: "about-me",
+                defaults: new { controller = "About", action = "Index", id = UrlParameter.Optional },
+                namespaces: new string[] { "BlogEngine.Web.Controllers" }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                namespaces: new string[] { "BlogEngine.Web.Controllers" }
             );
         }
     }

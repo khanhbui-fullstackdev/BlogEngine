@@ -1,0 +1,41 @@
+﻿@model BlogEngine.Web.ViewModels.PostViewModel
+@{
+    ViewBag.Title = "Post Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var post = Model;
+}
+
+<div class="primary col-md-8 col-sm-12 col-xs-12">
+    <section class="latest section">
+        <div class="section-inner">
+            <div class="content">
+
+                <h3 class="title">
+                    <label>@post.Name</label><br />
+                    <small class="text-muted">@post.CreatedDate.Value.ToString("MMMM dd, yyyy") by</small>
+                    <a href="#">
+                        <span class="badge">@post.CreatedBy</span>
+                    </a>
+                    <a href="#"><small class="text-primary number-of-comments">@(post.Comments.Count()) comments</small> </a>
+                </h3>
+
+                <div>
+                    <img class="post-image" src="~/Assets/Clients/images/projects/project-featured.png" />
+                </div>
+                <!--Post Content Start-->
+                <p>
+                    @post.Content
+                </p>
+                <!--Post Content End-->
+                <!-- Post Blockquote Start -->
+                <div>
+                    <blockquote class="blockquote">
+                        <h4>Quote</h4>
+                        <p>@post.Quote</p>
+                    </blockquote>
+                </div>
+                <!-- Post Blockquote End -->
+            </div>
+        </div>
+    </section>
+</div>

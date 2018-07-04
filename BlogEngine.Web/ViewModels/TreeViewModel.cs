@@ -1,15 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using BlogEngine.Web.Abstracts;
+using System.Collections.Generic;
 
 namespace BlogEngine.Web.ViewModels
 {
-    public class TreeViewModel
+    public class TreeViewModel : TreeViewBase
     {
         // Cheating data structure for using bootstrap-treeview
+        // More reference: https://github.com/jonmiles/bootstrap-treeview/pull/116/files/7754cd7fc4f328b0fda25255ced1745cc8be541b?diff=split&short_path=04c6e90
         public int _parentid { get; set; }
-        public string Text { get; set; }
         public string _slug { get; set; }
         public List<NodeViewModel> Nodes { get; set; }
-        public List<int> Tags { get; set; }
 
         public TreeViewModel TreeViewMappingCategory(CategoryViewModel categoryViewModel)
         {
@@ -42,6 +42,7 @@ namespace BlogEngine.Web.ViewModels
                 treeViewModel._parentid = categoryViewModel.ID;
                 treeViewModel.Text = categoryViewModel.Name;
                 treeViewModel._slug = categoryViewModel.Slug;
+                treeViewModel.Href = "/category/" + categoryViewModel.ID + "/" + categoryViewModel.Slug; //category/{id}/{slug}
                 treeViewModel.Tags = new List<int>();
                 if (categoryViewModel.SubCategories.Count != 0)
                 {
@@ -53,6 +54,7 @@ namespace BlogEngine.Web.ViewModels
                         nodeViewModel._nodeid = subcategory.ID;
                         nodeViewModel.Text = subcategory.Name;
                         nodeViewModel._slug = subcategory.Slug;
+                        nodeViewModel.Href = "/subcategory/" + subcategory.ID + "/" + subcategory.Slug;
                         treeViewModel.Nodes.Add(nodeViewModel);
                     }
                 }

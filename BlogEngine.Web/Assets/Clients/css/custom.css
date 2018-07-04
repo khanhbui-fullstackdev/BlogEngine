@@ -1,3 +1,18 @@
 ﻿.number-of-comments {
     color: #337ab7 !important;
 }
+
+.post-image {
+    width: 100% !important;
+}
+
+.post-quote {
+    background: #1abc9c;
+    color: #f6f8f8;
+    width: 70%;
+    border-radius: 50px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 40px !important;
+    margin-top: 40px !important;
+}

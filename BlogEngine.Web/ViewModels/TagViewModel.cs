@@ -7,5 +7,7 @@
         public string Name { set; get; }
 
         public string Type { set; get; }
+
+        public string Href { get; set; }
     }
 }

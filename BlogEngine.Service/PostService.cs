@@ -25,5 +25,28 @@ namespace BlogEngine.Service
         {
             return _postRepository.GetAll();
         }
+
+        public Post GetPostById(int postId)
+        {
+            var post = _postRepository.GetSingleByCondition(x => x.ID == postId && x.Status == true);
+            return post;
+        }
+
+        public IEnumerable<Post> GetPostsByCategory(int categoryId)
+        {
+            var posts = _postRepository.GetMulti(x => x.CategoryID == categoryId && x.Status == true);
+            return posts;
+        }
+
+        public IEnumerable<Post> GetPostsByCategory(string slug)
+        {
+            var posts = _postRepository.GetMulti(x => x.Slug.Equals(slug) && x.Status == true);
+            return posts;
+        }
+
+        public IEnumerable<Post> GetPostsBySubcategory(int subcategoryId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

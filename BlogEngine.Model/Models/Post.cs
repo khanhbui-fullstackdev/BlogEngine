@@ -26,6 +26,8 @@ namespace BlogEngine.Model.Models
 
         public string Content { get; set; }
 
+        public string Quote { get; set; }
+
         public int CategoryID { get; set; }
 
         [ForeignKey("CategoryID")]

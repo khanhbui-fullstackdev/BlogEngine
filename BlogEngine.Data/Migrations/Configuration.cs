@@ -1,4 +1,4 @@
-namespace BlogEngine.Data.Migrations
+﻿namespace BlogEngine.Data.Migrations
 {
     using BlogEngine.Data;
     using BlogEngine.Model.Models;
@@ -296,20 +296,50 @@ namespace BlogEngine.Data.Migrations
                         Name = "Introducing Nullable Reference Types in C#",
                         Slug = "introducing-nullable-reference-types-in-csharp",
                         CategoryID = 1,
-                        Summary = "Today we released a prototype of a C# feature called �nullable reference types�, which is intended to help you find and fix most of your null-related bugs before they blow up at runtime. We would love for you to install the prototype and try it out on your code! (Or maybe a copy of it!",
+                        Summary = "Today we released a prototype of a C# feature called “nullable reference types“, which is intended to help you find and fix most of your null-related bugs before they blow up at runtime. We would love for you to install the prototype and try it out on your code! (Or maybe a copy of it!",
                         CreatedDate = DateTime.Now,
                         CreatedBy = "khanh.buivuong@nashtechglobal.com",
-                        Status = true
+                        Status = true,
+                        Quote = "Design is not just what is look like, Design is how it's work.",
+                        Content = @"
+Today we released a prototype of a C# feature called “nullable reference types“, which is intended to help you find and fix most of your null-related bugs before they blow up at runtime.
+We would love for you to install the prototype and try it out on your code! (Or maybe a copy of it! 😄) Your feedback is going to help us get the feature exactly right before we officially release it.
+The billion-dollar mistake
+Tony Hoare, one of the absolute giants of computer science and recipient of the Turing Award, invented the null reference! It’s crazy these days to think that something as foundational and ubiquitous was invented, but there it is. Many years later in a talk, Sir Tony actually apologized, calling it his “billion-dollar mistake”:"
                     },
+
                     new Post()
                     {
                         Name = ".NET Core 2.1 June Update",
                         Slug = "net-core-2-1-june-update",
                         CategoryID = 2,
-                        Summary=@"We released .NET Core 2.1.1. This update includes .NET Core SDK 2.1.301, ASP.NET Core 2.1.1 and .NET Core 2.1.1. See .NET Core 2.1.1 release notes for complete details on the release. Quality Updates CLI [4050c6374] The �pack� command under �buildCrossTargeting� for �Microsoft.DotNet.MSBuildSdkResolver� now throws a �NU5104� warning/error because the SDK stage0 was changed to �2.1.300� [change was",
+                        Summary=@"We released .NET Core 2.1.1. This update includes .NET Core SDK 2.1.301, ASP.NET Core 2.1.1 and .NET Core 2.1.1. See .NET Core 2.1.1 release notes for complete details on the release. Quality Updates CLI [4050c6374] The “pack” command under ‘buildCrossTargeting’ for ‘Microsoft.DotNet.MSBuildSdkResolver’ now throws a “NU5104” warning/error because the SDK stage0 was changed to “2.1.300” [change was",
                         CreatedDate = DateTime.Now,
                         CreatedBy = "khanh.buivuong@nashtechglobal.com",
-                        Status = true
+                        Status = true,
+                        Quote = "Because of your smile, you make life more beautiful",
+                        Content =@"CLI
+[4050c6374] The “pack” command under ‘buildCrossTargeting’ for ‘Microsoft.DotNet.MSBuildSdkResolver’ now throws a “NU5104” warning/error because the SDK stage0 was changed to “2.1.300” [change was intended].
+[ea539c7f6] Add retry when Directory.Move (#9313)
+CoreCLR
+[13ea3c2c8e] Fix alternate stack for Alpine docker on SELinux (#17936) (#17975)
+[88db627a97] Update g_highest_address and g_lowest_address in StompWriteBarrier(WriteBarrierOp::StompResize) on ARM (#18107)
+[0ea5fc4456] Use sysconf(_SC_NPROCESSORS_CONF) instead of sysconf(_SC_NPROCESSORS_ONLN) in PAL and GC on ARM and ARM64
+CoreFX
+[3700c5b793] Update to a xUnit Performance Api that has a bigger Etw buffer size. … (#30328)
+[6b38470265] Use _SC_NPROCESSORS_CONF instead of _SC_NPROCESSORS_ONLN in Unix_ProcessorCountTest on ARM/ARM64 (#30132)
+[fe653a068c] check SwitchingProtocol before ContentLength (#29948) (#29993)
+[f11f3e1fcf] Fix handling of cursor position when other ESC sequences already in stdin (#29897) (#29923)
+[77a4a19622] [release/2.1] Port nano test fixes (#29995)
+[7ce9270ac7] Fix Sockets hang caused by concurrent Socket disposal (#29786) (#29846)
+[ed23f5391f] Fix terminfo number reading with 32-bit integers (#29655) (#29765)
+[1c34018f14] Fix getting attributes for sharing violation files (#29790) (#29832)
+[bc71849976] [release/2.1] Fix deadlock when waiting for process exit in Console.CancelKeyPress (#29749)
+[adc1c4d0d5] Fix WebSocket split UTF8 read #29834 (#29840) (#29853)
+WCF
+[0a99dd88] Add net461 as a supported framework for S.SM.Security.
+[45855085] Generate ThisAssembly.cs, update the version and links for svcutil.xmlserializer (#2893)
+[68457365] Target svcutil.xmlserializer app at dotnetcore. (#2855)"
                     }
                 };
                 context.Posts.AddRange(posts);
