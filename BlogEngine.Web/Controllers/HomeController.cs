@@ -96,6 +96,13 @@ namespace BlogEngine.Web.Controllers
             }
         }
 
+        [HttpGet]
+        public ActionResult GetPostByKeyword(string keyword)
+        {
+
+            return View();
+        }
+
         [ChildActionOnly]
         public PartialViewResult LastestComment()
         {

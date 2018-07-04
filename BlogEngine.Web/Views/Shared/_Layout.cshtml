@@ -33,10 +33,12 @@
 </head>
 <body>
     @{ Html.RenderAction("Header", "Home"); }
-
     <div class="container sections-wrapper">
         <div class="row">
-            @RenderBody()
+            <div class="primary col-md-8 col-sm-12 col-xs-12">
+                @{ Html.RenderAction("BreadCrumb", "BreadCrumb"); }
+                @RenderBody()
+            </div>
 
             <div class="secondary col-md-4 col-sm-12 col-xs-12">
                 @{ Html.RenderAction("Category", "Home"); }

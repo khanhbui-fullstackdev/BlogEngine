@@ -4,9 +4,6 @@ using BlogEngine.Model.Models;
 using BlogEngine.Service.IServices;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BlogEngine.Service
 {
@@ -38,6 +35,12 @@ namespace BlogEngine.Service
         {
             
             throw new NotImplementedException();
+        }
+
+        public Category GetCategoryById(int categoryId)
+        {
+            var category = _categoryRepository.GetSingleByCondition(x => x.ID == categoryId && x.Status == true);
+            return category;
         }
     }
 }

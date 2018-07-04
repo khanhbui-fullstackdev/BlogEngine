@@ -9,6 +9,7 @@ namespace BlogEngine.Service.IServices
 {
     public interface ICategoryService
     {
+        Category GetCategoryById(int categoryId);
         IEnumerable<Category> GetAllCategories();
         IEnumerable<Category> GetAllCategoriesWithSubCategories();
         IEnumerable<Category> GetCategoriesBySubCategory(int subcategoryId);

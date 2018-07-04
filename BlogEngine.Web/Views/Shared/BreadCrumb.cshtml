@@ -1,0 +1,30 @@
+﻿@model BlogEngine.Web.ViewModels.BreadCrumbViewModel
+@{
+    var breadCrumb = Model;
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/home">
+                Home  &nbsp;
+                <i class="fa fa-home"></i>
+            </a>
+        </li>
+        @if (breadCrumb != null)
+        {
+            if (string.IsNullOrEmpty(breadCrumb.Name) == false)
+            {
+                <li class="breadcrumb-item active" aria-current="page">
+                    <i class="fa fa-folder-open-o">&nbsp; @breadCrumb.Name</i>
+                </li>
+            }
+        }
+        else
+        {
+            <li class="breadcrumb-item active" aria-current="page">
+                <i class="fa fa-folder-open-o">&nbsp; Blogs</i>
+            </li>
+        }
+    </ol>
+</nav>
