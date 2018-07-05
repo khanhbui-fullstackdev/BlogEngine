@@ -44,6 +44,12 @@ namespace BlogEngine.Service
             return posts;
         }
 
+        public IEnumerable<Post> GetPostsByKeyword(string keyword)
+        {
+            var posts = _postRepository.GetMulti(x => x.Name.Contains(keyword) && x.Status == true);
+            return posts;
+        }
+
         public IEnumerable<Post> GetPostsBySubcategory(int subcategoryId)
         {
             var posts = _postRepository.GetPostsBySubCategory(subcategoryId);

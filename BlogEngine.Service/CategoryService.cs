@@ -31,9 +31,15 @@ namespace BlogEngine.Service
             return categories;
         }
 
+        public IEnumerable<Category> GetCategoriesByKeyword(string keyword)
+        {
+            var categories = _categoryRepository.GetMulti(x => x.Name.Contains(keyword) && x.Status == true);
+            return categories;
+        }
+
         public IEnumerable<Category> GetCategoriesBySubCategory(int subcategoryId)
         {
-            
+
             throw new NotImplementedException();
         }
 

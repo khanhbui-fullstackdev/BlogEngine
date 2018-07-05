@@ -14,5 +14,6 @@ namespace BlogEngine.Service.IServices
         IEnumerable<Post> GetPostsByCategory(int categoryId);
         IEnumerable<Post> GetPostsByCategory(string slug);
         IEnumerable<Post> GetPostsBySubcategory(int subcategoryId);
+        IEnumerable<Post> GetPostsByKeyword(string keyword);
     }
 }

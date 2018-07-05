@@ -13,5 +13,6 @@ namespace BlogEngine.Service.IServices
         IEnumerable<Category> GetAllCategories();
         IEnumerable<Category> GetAllCategoriesWithSubCategories();
         IEnumerable<Category> GetCategoriesBySubCategory(int subcategoryId);
+        IEnumerable<Category> GetCategoriesByKeyword(string keyword);
     }
 }

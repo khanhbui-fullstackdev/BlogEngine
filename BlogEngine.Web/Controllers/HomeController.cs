@@ -96,10 +96,11 @@ namespace BlogEngine.Web.Controllers
             }
         }
 
-        [HttpGet]
-        public ActionResult GetPostByKeyword(string keyword)
+        [HttpPost]
+        public ActionResult GetPostsByKeyword(string keyword)
         {
-
+            var postsModel = _postService.GetPostsByKeyword(keyword).Take(5);
+            var categoriesModel = _categoryService.GetCategoriesByKeyword(keyword).Take(2);
             return View();
         }
 
