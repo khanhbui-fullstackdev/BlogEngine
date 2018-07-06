@@ -26,7 +26,7 @@ namespace BlogEngine.Web.ViewModels
                     {
                         AutocompleteWidgetViewModel autocompletePost = new AutocompleteWidgetViewModel
                         {
-                            Category = post.Category.Name,
+                            Category = "Post",
                             Label = post.Name                           
                         };
                         autocompleteWidgetViewModels.Add(autocompletePost);
