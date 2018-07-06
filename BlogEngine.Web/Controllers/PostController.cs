@@ -44,5 +44,13 @@ namespace BlogEngine.Web.Controllers
             ViewBag.SubCategoryId = id;
             return View(postsViewModel);
         }
+
+
+        public ActionResult PostsByKeyword(string keyword)
+        {
+            var postsModel = _postService.GetPostsByKeyword(keyword);
+            var postsViewModel = Mapper.Map<IEnumerable<Post>, IEnumerable<PostViewModel>>(postsModel);
+            return View(postsViewModel);
+        }
     }
 }

@@ -25,13 +25,39 @@
             }
         });
 
-        
-        $("#txtSearch").catcomplete({
-            //delay: 0,
-            //minLength: 3,
-            //source: data
+        $('#txtSearch').catcomplete({
+            delay: 500,
+            minLength: 4,
+            source: commonController.getPostsByKeyword,
         });
     },
-    
+    getPostsByKeyword: function (request, response) {
+        var ajaxConfig = {
+            // request:  request object, with a single term property, 
+            // which refers to the value currently in the text input
+
+            // response: A response callback, 
+            // which expects a single argument: the data to suggest to the user
+
+            url: '/Home/GetPostsByKeyword',
+            type: 'POST',
+            dataType: "json",
+            data: {
+                keyword: request.term,
+            },
+            success: function (result, status, xhr) {
+                if (result.status) {
+                    var data = JSON.parse(result.data);
+                    response(data);
+                } else {
+                    toastr.error(result.error);
+                }
+            },
+            error: function (xhr, status, error) {
+                toastr.error(error);
+            }
+        };
+        $.ajax(ajaxConfig);
+    }
 };
 commonController.init();

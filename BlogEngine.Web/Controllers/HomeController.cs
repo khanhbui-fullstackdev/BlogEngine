@@ -29,9 +29,18 @@ namespace BlogEngine.Web.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var postModel = _postService.GetAllPosts();
-            var postViewModel = Mapper.Map<IEnumerable<Post>, IEnumerable<PostViewModel>>(postModel);
-            return View(postViewModel);
+            var postsModel = _postService.GetAllPosts();
+            // https://stackoverflow.com/questions/6062192/there-is-already-an-open-datareader-associated-with-this-command-which-must-be-c
+            /*
+                This can happen if you execute a query while iterating over the results from another query. 
+                It is not clear from your example where this happens because the example is not complete.
+                One thing that can cause this is lazy loading triggered when iterating over the results of some query.
+                This can be easily solved by allowing MARS in your connection string. 
+                Add MultipleActiveResultSets=true to the provider part of your connection string 
+                (where Data Source, Initial Catalog, etc. are specified).
+             */
+            var postsViewModel = Mapper.Map<IEnumerable<Post>, IEnumerable<PostViewModel>>(postsModel).ToList();
+            return View(postsViewModel);
         }
 
         [ChildActionOnly]
@@ -97,11 +106,48 @@ namespace BlogEngine.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult GetPostsByKeyword(string keyword)
+        public JsonResult GetPostsByKeyword(string keyword)
         {
-            var postsModel = _postService.GetPostsByKeyword(keyword).Take(5);
-            var categoriesModel = _categoryService.GetCategoriesByKeyword(keyword).Take(2);
-            return View();
+            try
+            {
+                var postsModel = _postService.GetPostsByKeyword(keyword).Take(5);
+                var postsViewModel = Mapper.Map<IEnumerable<Post>, IEnumerable<PostViewModel>>(postsModel);
+
+                var categoriesModel = _categoryService.GetCategoriesByKeyword(keyword).Take(2);
+                var categoriesViewModel = Mapper.Map<IEnumerable<Category>, IEnumerable<CategoryViewModel>>(categoriesModel);
+
+                SearchResultViewModel searchResultViewModel = new SearchResultViewModel();
+                searchResultViewModel.Posts = postsViewModel;
+                searchResultViewModel.Categories = categoriesViewModel;
+
+                AutocompleteWidgetViewModel autocompleteWidgetViewModel = new AutocompleteWidgetViewModel();
+                List<AutocompleteWidgetViewModel> items = autocompleteWidgetViewModel.AutocompleteWidgetMappingSearchResult(searchResultViewModel);
+
+                var jsonData = JsonConvert.SerializeObject
+                (
+                    items,
+                    Formatting.Indented,
+                    new JsonSerializerSettings
+                    {
+                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+                        ContractResolver = new CamelCasePropertyNamesContractResolver()
+                    }
+                );
+
+                return Json(new
+                {
+                    status = true,
+                    data = jsonData
+                }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new
+                {
+                    status = false,
+                    error = ex.InnerException.Message
+                });
+            }
         }
 
         [ChildActionOnly]

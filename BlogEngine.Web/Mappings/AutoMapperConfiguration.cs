@@ -10,7 +10,9 @@ namespace BlogEngine.Web.Mappings
         {
             Mapper.Initialize(cfg =>
             {
-                cfg.CreateMap<Post, PostViewModel>();                
+                cfg.CreateMap<Post, PostViewModel>();
+                cfg.CreateMap<Category, CategoryViewModel>();                
+                cfg.CreateMap<SubCategory, SubCategoryViewModel>();
             });
         }
     }

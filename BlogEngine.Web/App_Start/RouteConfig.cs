@@ -35,6 +35,13 @@ namespace BlogEngine.Web
             );
 
             routes.MapRoute(
+               name: "Search Result",
+               url: "posts/search-result",
+               defaults: new { controller = "Post", action = "PostsByKeyword", keyword = UrlParameter.Optional },
+               namespaces: new string[] { "BlogEngine.Web.Controllers" }
+            );
+
+            routes.MapRoute(
                 name: "About Me",
                 url: "about-me",
                 defaults: new { controller = "About", action = "Index", id = UrlParameter.Optional },

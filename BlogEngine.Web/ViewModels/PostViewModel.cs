@@ -38,7 +38,7 @@ namespace BlogEngine.Web.ViewModels
 
         public int CategoryID { get; set; }
 
-        //public virtual CategoryViewModel Category { get; set; }
+        public virtual CategoryViewModel Category { get; set; }
 
         //public virtual IEnumerable<PostTagViewModel> PostTags { get; set; }
         public virtual IEnumerable<CommentViewModel> Comments { get; set; }

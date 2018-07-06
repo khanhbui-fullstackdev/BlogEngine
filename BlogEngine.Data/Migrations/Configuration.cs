@@ -375,6 +375,26 @@ Tony Hoare, one of the absolute giants of computer science and recipient of the 
                                     These updates are already available as the current versions on npm and Bower. Information on all the ways to get jQuery is available at https://jquery.com/download/. Public CDNs receive their copies today, please give them a few days to post the files. If you’re anxious to get a quick start, use the files on our CDN until they have a chance to update.
 
                                     8 THOUGHTS ON “JQUERY 3.3.1 – FIXED DEPENDENCIES IN RELEASE TAG”"
+                    },
+                    new Post()
+                    {
+                        Name = "Welcome to C# 7.2 and Span",
+                        Slug = "welcome-to-c-7-2-and-span",
+                        CategoryID = 1,
+                        Summary = @"C# 7.2 is the latest point release of C#, and adds a number of small but useful features. All the features are described in wonderful detail in the docs. Start with the overview, What’s new in C# 7.2, which gives you an excellent introduction to the new set of capabilities. It is worth celebrating that",
+                        CreatedDate = DateTime.Now,
+                        CreatedBy = "khanh.buivuong@nashtechglobal.com",
+                        Status = true,
+                        Quote = "C# is awesome programming language",
+                        Content = @"C# 7.2 is the latest point release of C#, and adds a number of small but useful features.
+                                    All the features are described in wonderful detail in the docs. Start with the overview, What’s new in C# 7.2, which gives you an excellent introduction to the new set of capabilities. It is worth celebrating that a significant portion of the docs are community contributed, not least the material on the new private protected access modifier.
+                                    The dominant theme of C# 7.2 centers on improving expressiveness around working with structs by reference. This is important in particular for high performance scenarios, where structs help avoid the garbage collection overhead of allocation, whereas struct references help avoid excessive copying.
+                                    The docs go into detail on this set of features in Reference semantics with value types, and they are shown in my new “talking head” video on Channel 9, New Features in C# 7.1 and C# 7.2.
+                                    Several of these features, while generally useful, were added to C# 7.2 specifically in support of the new Span<T> family of framework types. This library offers a unified (and allocation-free) representation of memory from a multitude of different sources, such as arrays, stack allocation and native code. With its slicing capabilities, it obviates the need for expensive copying and allocation in many scenarios, such as string manipulation, buffer management, etc, and provides a safe alternative to unsafe code. This is really a game changer, in my opinion. While you may start out using it mostly for performance-intensive scenarios, it is lightweight enough that I think many new idioms will evolve for using it in every day code.
+                                    Jared Parsons gives a great introduction in his Channel 9 video C# 7.2: Understanding Span. In the December 15 issue of the MSDN Magazine, Stephen Toub will go into even more detail on Span and how to use it.
+                                    C# 7.2 ships with the 15.5 release of Visual Studio 2017.
+                                    Enjoy C# 7.2 and Span, and happy hacking!
+                                    Mads Torgersen, Lead Designer of C#"
                     }
                 };
                 context.Posts.AddRange(posts);

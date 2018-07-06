@@ -13,3 +13,8 @@ where	subcate.ID=10	and
 		cate.ID=6		and
 		post.CategoryID = cate.ID and
 		subcate.CategoryID = cate.ID
+
+
+select	cate.Name
+from	Categories cate
+where	cate.Name like '%.net%'
