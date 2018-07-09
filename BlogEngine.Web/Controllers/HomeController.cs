@@ -106,7 +106,7 @@ namespace BlogEngine.Web.Controllers
         }
 
         [HttpPost]
-        public JsonResult GetPostsByKeyword(string keyword)
+        public JsonResult GetPostsByKeyword_(string keyword)
         {
             try
             {
@@ -139,6 +139,33 @@ namespace BlogEngine.Web.Controllers
                     status = true,
                     data = jsonData
                 }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new
+                {
+                    status = false,
+                    error = ex.InnerException.Message
+                });
+            }
+        }
+
+        [HttpPost]
+        public JsonResult GetPostsByKeyword(string keyword)
+        {
+            try
+            {
+                var postsModel = _postService.GetPostsByKeyword(keyword);
+                var postsViewModel = Mapper.Map<IEnumerable<Post>, IEnumerable<PostViewModel>>(postsModel);
+
+                var categoriesModel = _categoryService.GetCategoriesByKeyword(keyword);
+                var categoriesViewModel = Mapper.Map<IEnumerable<Category>, IEnumerable<CategoryViewModel>>(categoriesModel);
+
+                SearchResultViewModel searchResultViewModel = new SearchResultViewModel();
+                searchResultViewModel.Posts = postsViewModel;
+                searchResultViewModel.Categories = categoriesViewModel;
+
+                return Json(searchResultViewModel, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
             {

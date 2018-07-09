@@ -13,6 +13,7 @@ namespace BlogEngine.Data
         #region BlogEngineDbContext
         public BlogEngineDbContext() : base("BlogEngineConnectionString")
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
         #endregion
 

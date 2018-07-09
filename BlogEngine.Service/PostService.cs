@@ -46,7 +46,10 @@ namespace BlogEngine.Service
 
         public IEnumerable<Post> GetPostsByKeyword(string keyword)
         {
-            var posts = _postRepository.GetMulti(x => x.Name.Contains(keyword) && x.Status == true);
+            var posts = _postRepository.GetMulti(
+                x => x.Name.Contains(keyword) && 
+                x.Status == true, 
+                new string[] { "Category" });
             return posts;
         }
 
