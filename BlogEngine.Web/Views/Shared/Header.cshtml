@@ -39,25 +39,21 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <form id="form-country_v2" name="form-country_v2">
-                        <div class="typeahead__container">
-                            <div class="typeahead__field">
-                                <span class="typeahead__query">
-                                    <input id="txtKeyword"
-                                           class="js-typeahead"                                             
-                                           name="keyword" 
-                                           type="search" 
-                                           placeholder="Search" 
-                                           autocomplete="off">
-                                </span>
-                                <span class="typeahead__button">
-                                    <button type="submit">
-                                        <i class="typeahead__search-icon"></i>
-                                    </button>
-                                </span>
-
+                    <form class="navbar-form navbar-right" action="/posts/search-result" method="post">                       
+                        <div class="form-group typeahead__container">
+                            <div class="typeahead__field ui-autocomplete-post">
+                                <input id="txtSearch"
+                                       name="keyword"
+                                       type="search"
+                                       class="js-typeahead form-control"
+                                       placeholder="Search" autocomplete="off"/>
                             </div>
                         </div>
+                        <button id="btnSearch"
+                                type="submit"
+                                class="btn btn-default">
+                            Search
+                        </button>
                     </form>
                 </li>
 

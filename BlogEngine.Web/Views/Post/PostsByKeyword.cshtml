@@ -12,7 +12,7 @@
         <div class="content">
             @if (posts.Count() != 0)
             {
-                @foreach (var post in posts)
+                foreach (var post in posts)
                 {
                     var blogUrl = "/post/" + post.Slug + "/" + post.ID;
                     <div class="item row">

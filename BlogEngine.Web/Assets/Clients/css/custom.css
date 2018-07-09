@@ -23,3 +23,18 @@
     margin: .8em 0 .2em;
     line-height: 1.5;
 }
+
+.ui-autocomplete-post {
+    height: 35px;
+    font-size: 13pt;
+}
+
+.post-suggestion {
+    line-height: 10pt;
+    font-size: initial;
+}
+
+.post-suggestion-text {
+    color: #f0ad4e !important;
+    font-size: 9pt !important;
+}

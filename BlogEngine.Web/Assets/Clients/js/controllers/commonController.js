@@ -22,10 +22,9 @@
             template: function (query, item) {
                 var postName = item.Name === null || item.Name === undefined ? '' : item.Name;
                 var categoryName = (item.Category === null || item.Category === undefined) ? '</small></div>' : item.Category.Name;
-
-                var templateHtml = "<div class='suggest-item>'" +
-                    "<i class='fa fa-file-text-o' aria-hidden='true'></i>" + postName +
-                    "<br /><small class='text-warning'>" + categoryName + "</small></div>";
+                var templateHtml = "<div class='suggest-item post-suggestion'>" +
+                    "<i class='fa fa-file-text-o' aria-hidden='true'></i> &nbsp;" + postName +
+                    "<br />&nbsp; &nbsp; &nbsp; <small class='post-suggestion-text'> &nbsp;" + categoryName + "</small></div>";
                 return templateHtml;
             },
             source: {
