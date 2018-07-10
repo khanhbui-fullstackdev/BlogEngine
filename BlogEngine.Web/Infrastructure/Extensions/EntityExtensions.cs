@@ -1,9 +1,6 @@
 ﻿using BlogEngine.Model.Models;
 using BlogEngine.Web.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace BlogEngine.Web.Infrastructure.Extensions
 {
@@ -21,6 +18,15 @@ namespace BlogEngine.Web.Infrastructure.Extensions
             post.Name = postViewModel.Name;
             post.Slug = postViewModel.Slug;
             post.Summary = postViewModel.Summary;
+        }
+
+        public static void UpdateContact(this Contact contact,ContactViewModel contactViewModel)
+        {
+            contact.ContactId = contactViewModel.ContactId;
+            contact.ContactName = contactViewModel.ContactName;
+            contact.ContactEmail = contactViewModel.ContactEmail;
+            contact.Content = contactViewModel.Content;
+            contact.CreatedDate = DateTime.Now;
         }
     }
 }

@@ -44,4 +44,4 @@ var categoryController = {
         $.ajax(ajaxConfig);
     }
 }
-categoryController.init();
+categoryController.init();//call itselt

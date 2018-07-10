@@ -1,8 +1,11 @@
-﻿
+﻿@model BlogEngine.Web.ViewModels.ContactViewModel
+@using BotDetect.Web.Mvc;
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl" rel="stylesheet" type="text/css" />
 
 <section class="latest section">
     <div class="section-inner">
@@ -32,22 +35,23 @@
         </div>
         <hr class="divider" />
 
-        <div class="wrapper-contact p-3 bg-faded">
+        <form id="frm_contactInfo" class="wrapper-contact p-3 bg-faded">
             <h4><span>Leave a reply</span></h4>
             <div class="form-group">
                 <label>Name</label>
                 <input class="form-control text-box single-line"
                        id="txtName"
-                       name="Name" type="text" />
-
+                       name="name" type="text" placeholder="Enter your name here..." />
+                @Html.ValidationMessageFor(model => model.ContactName, "", new { @class = "text-danger", })
             </div>
 
             <div class="form-group">
                 <label>Email</label>
                 <input class="form-control text-box"
                        id="txtEmail"
-                       name="Email"
-                       type="email" />
+                       name="email"
+                       type="email" placeholder="Enter your email here..." />
+                @Html.ValidationMessageFor(model => model.ContactEmail, "", new { @class = "text-danger", })
             </div>
 
             <div class="form-group">
@@ -55,9 +59,33 @@
                 <textarea class="form-control"
                           cols="20"
                           id="txtMessage"
-                          name="Message" rows="5">    
-                </textarea>
+                          name="message" rows="5" placeholder="Enter your message here..."></textarea>
+                @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger", })
             </div>
-        </div>
+
+            <div class="form-group">
+                <label>Captcha</label>
+                <div class="row">
+                    <div class="col-md-6">
+                        @{ 
+                            MvcCaptcha ContactCaptcha = new MvcCaptcha("ContactCaptcha");
+                            ContactCaptcha.UserInputID = "captchaCode";
+                         }
+                        @Html.Captcha(ContactCaptcha)
+                        @Html.TextBox("captchaCode", "", new { @placeholder = "Enter your captcha here...", id = "txtCaptchaCode" })
+                    </div>
+                    <div class="col-md-6">
+                        <input id="btnAddContact"
+                               type="button"
+                               value="Submit"
+                               class="btn btn-warning btn-lg float-right" />
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
 </section>
+
+@section AboutJS{
+    <script src="~/Assets/Clients/js/controllers/contactController.js"></script>
+}

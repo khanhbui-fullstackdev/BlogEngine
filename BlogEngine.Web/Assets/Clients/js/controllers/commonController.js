@@ -57,4 +57,4 @@
         $.typeahead(typeHeadConfig);
     }
 };
-commonController.init();
+commonController.init();//call itself

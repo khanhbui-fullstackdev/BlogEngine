@@ -61,6 +61,7 @@
     <script src="~/Scripts/Plugins/jquery-ui/jquery-ui.min.js"></script>
     <!--jQuery Validation Plugin - v1.17.0-->
     <script src="~/Scripts/Plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/Scripts/Plugins/jquery-validation/dist/additional-methods.min.js"></script>
     <!--jQuery typehead - v2.10.4-->
     <script src="~/Scripts/Plugins/jquery-typeahead/dist/jquery.typeahead.min.js"></script>
     <!--Bootstrap v3.3.7-->
@@ -72,5 +73,7 @@
     <!--Scripts controllers-->
     <script src="~/Assets/Clients/js/controllers/categoryController.js"></script>
     <script src="~/Assets/Clients/js/controllers/commonController.js"></script>
+
+    @RenderSection("AboutJS", required: false)
 </body>
 </html>

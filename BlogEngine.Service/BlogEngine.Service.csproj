@@ -48,7 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoryService.cs" />
+    <Compile Include="ContactService.cs" />
     <Compile Include="IServices\ICategoryService.cs" />
+    <Compile Include="IServices\IContactService.cs" />
     <Compile Include="IServices\IPostService.cs" />
     <Compile Include="IServices\ISubCategoryService.cs" />
     <Compile Include="SubCategoryService.cs" />

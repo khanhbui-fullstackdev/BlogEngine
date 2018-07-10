@@ -12,11 +12,12 @@ namespace BlogEngine.Common.Constants
         public const string MinLengthField = "This field requires at least 2 characters";
         public const string MaxLengthField = "This field cannot length over 255 characters";
 
-        public const string RequiredEmail = "Your email is required";
-        public const string InvalidEmail = "Your email is invalid";
+        public const string RequiredEmail = "Email is required";
+        public const string InvalidEmail = "Eail is invalid";
         public const string MinLengthEmail = "Email requires at least 12 characters";//ab@gmail.com
         public const string MaxLengthEmail = "Email cannot length over 50 characters";
 
+        public const string MinLengthMessage = "Message requires at least 2 characters";
         public const string MaxLengthMessage = "Message cannot length over 500 characters";
 
         public const string MinLengthPhone = "Phone requires at least 10 characters";

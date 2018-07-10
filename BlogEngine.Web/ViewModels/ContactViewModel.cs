@@ -1,39 +1,31 @@
 ﻿using BlogEngine.Common.Constants;
-using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BlogEngine.Model.Models
+namespace BlogEngine.Web.ViewModels
 {
-    [Table("Contacts")]
-    public class Contact
+    public class ContactViewModel
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ContactId { get; set; }
 
         [
             Required(AllowEmptyStrings = false, ErrorMessage = ErrorMessage.RequiredField),
             MinLength(2, ErrorMessage = ErrorMessage.MinLengthField),
-            MaxLength(255, ErrorMessage = ErrorMessage.MaxLengthField),
-            StringLength(255),
-            Column(TypeName = "nvarchar")
-        ]
+            MaxLength(255, ErrorMessage = ErrorMessage.MaxLengthField)]
         public string ContactName { get; set; }
 
         [
             EmailAddress(ErrorMessage = ErrorMessage.InvalidEmail),
             Required(AllowEmptyStrings = false, ErrorMessage = ErrorMessage.RequiredEmail),
-            StringLength(50), Column(TypeName = "varchar")
-        ]
+            MinLength(12, ErrorMessage = ErrorMessage.MinLengthEmail),
+            MaxLength(50, ErrorMessage = ErrorMessage.MaxLengthEmail)]
         public string ContactEmail { get; set; }
 
         [
             Required(AllowEmptyStrings = false, ErrorMessage = ErrorMessage.RequiredField),
-            StringLength(500),
-            Column(TypeName = "nvarchar")
-        ]
+            MinLength(2, ErrorMessage = ErrorMessage.MinLengthMessage),
+            MaxLength(50, ErrorMessage = ErrorMessage.MaxLengthMessage)]        
         public string Content { get; set; }
 
-        public DateTime? CreatedDate { get; set; }
+        public string CaptchaCode { get; set; }
     }
 }
