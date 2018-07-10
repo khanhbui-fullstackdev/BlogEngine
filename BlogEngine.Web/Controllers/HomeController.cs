@@ -39,7 +39,7 @@ namespace BlogEngine.Web.Controllers
                 Add MultipleActiveResultSets=true to the provider part of your connection string 
                 (where Data Source, Initial Catalog, etc. are specified).
              */
-            var postsViewModel = Mapper.Map<IEnumerable<Post>, IEnumerable<PostViewModel>>(postsModel).ToList();
+            var postsViewModel = Mapper.Map<IEnumerable<Post>, IEnumerable<PostViewModel>>(postsModel);
             return View(postsViewModel);
         }
 
