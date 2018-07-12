@@ -38,3 +38,11 @@
     color: #f0ad4e !important;
     font-size: 9pt !important;
 }
+
+.contact-fields-textbox-error {
+    border: 0.75px solid #dc3545 !important;
+}
+
+.contact-fields-label-error {
+    color: #dc3545 !important;
+}

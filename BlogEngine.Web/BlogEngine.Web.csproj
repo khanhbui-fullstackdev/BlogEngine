@@ -515,6 +515,7 @@
     <Content Include="Assets\Clients\images\projects\project-4.png" />
     <Content Include="Assets\Clients\images\projects\project-5.png" />
     <Content Include="Assets\Clients\images\projects\project-featured.png" />
+    <Content Include="Assets\Clients\js\common\checkCaptcha.js" />
     <Content Include="Assets\Clients\js\controllers\categoryController.js" />
     <Content Include="Assets\Clients\js\controllers\commonController.js" />
     <Content Include="Assets\Clients\js\controllers\contactController.js" />
