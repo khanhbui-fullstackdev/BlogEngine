@@ -503,6 +503,7 @@
     <Content Include="App_Data\BlogEngineConnectionString_log.ldf">
       <DependentUpon>BlogEngineConnectionString.mdf</DependentUpon>
     </Content>
+    <Content Include="Assets\Clients\css\blogger.css" />
     <Content Include="Assets\Clients\css\custom.css" />
     <Content Include="Assets\Clients\css\styles.css" />
     <Content Include="Assets\Clients\images\about-me.jpg" />
@@ -515,6 +516,8 @@
     <Content Include="Assets\Clients\images\projects\project-4.png" />
     <Content Include="Assets\Clients\images\projects\project-5.png" />
     <Content Include="Assets\Clients\images\projects\project-featured.png" />
+    <Content Include="Assets\Clients\images\sin1.jpg" />
+    <Content Include="Assets\Clients\images\sin2.jpg" />
     <Content Include="Assets\Clients\js\common\checkCaptcha.js" />
     <Content Include="Assets\Clients\js\controllers\categoryController.js" />
     <Content Include="Assets\Clients\js\controllers\commonController.js" />
