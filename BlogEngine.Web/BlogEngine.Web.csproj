@@ -503,7 +503,7 @@
     <Content Include="App_Data\BlogEngineConnectionString_log.ldf">
       <DependentUpon>BlogEngineConnectionString.mdf</DependentUpon>
     </Content>
-    <Content Include="Assets\Clients\css\blogger.css" />
+    <Content Include="Assets\Clients\css\response.css" />
     <Content Include="Assets\Clients\css\custom.css" />
     <Content Include="Assets\Clients\css\styles.css" />
     <Content Include="Assets\Clients\images\about-me.jpg" />
